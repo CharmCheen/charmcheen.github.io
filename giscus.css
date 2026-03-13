@@ -1,0 +1,76 @@
+/*! Giscus Custom Theme - Matching Bento Box UI */
+main {
+  --color-canvas-default: transparent !important;
+  --color-canvas-subtle: rgba(255, 255, 255, 0.02) !important;
+  --color-border-default: rgba(255, 255, 255, 0.08) !important;
+  --color-border-muted: rgba(255, 255, 255, 0.05) !important;
+  
+  --color-fg-default: #f3f4f6 !important; /* Tailwind gray-100 */
+  --color-fg-muted: #9ca3af !important; /* Tailwind gray-400 */
+  --color-fg-subtle: #6b7280 !important; /* Tailwind gray-500 */
+  
+  --color-accent-fg: #3b82f6 !important; /* Tailwind blue-500 */
+  --color-accent-emphasis: #3b82f6 !important;
+  --color-accent-muted: rgba(59, 130, 246, 0.2) !important;
+  --color-accent-subtle: rgba(59, 130, 246, 0.1) !important;
+  
+  --color-btn-text: #f3f4f6 !important;
+  --color-btn-bg: rgba(255, 255, 255, 0.05) !important;
+  --color-btn-border: rgba(255, 255, 255, 0.1) !important;
+  --color-btn-hover-bg: rgba(255, 255, 255, 0.1) !important;
+  --color-btn-hover-border: rgba(255, 255, 255, 0.2) !important;
+  --color-btn-active-bg: rgba(255, 255, 255, 0.15) !important;
+  --color-btn-active-border: rgba(255, 255, 255, 0.25) !important;
+  
+  --color-btn-primary-text: #050505 !important;
+  --color-btn-primary-bg: #f3f4f6 !important;
+  --color-btn-primary-border: rgba(255, 255, 255, 0.1) !important;
+  --color-btn-primary-shadow: 0 0 transparent !important;
+  --color-btn-primary-inset-shadow: 0 0 transparent !important;
+  --color-btn-primary-hover-bg: #ffffff !important;
+  --color-btn-primary-hover-border: rgba(255, 255, 255, 0.2) !important;
+
+  /* Form & Input tweaks */
+  --color-input-bg: rgba(0, 0, 0, 0.2) !important; 
+  --color-input-border: rgba(255, 255, 255, 0.1) !important;
+  
+  --color-success-fg: #10b981 !important; /* Tailwind green-500 */
+  
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+/* Base structural overrides to match our minimalist feel */
+.giscus, .giscus-frame {
+  width: 100% !important;
+}
+
+.giscus-frame {
+  border: none !important;
+}
+
+/* Ensure inputs lack thick jarring borders */
+.form-control {
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Focus states with glowing effect instead of solid lines */
+.form-control:focus {
+  border-color: rgba(59, 130, 246, 0.5) !important; /* Blue glow */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15) !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Buttons rounded matching Bento style */
+.btn {
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Hide markdown branding for cleaner UI */
+.markdown-body {
+  font-size: 14px !important;
+}
+.markdown-body img {
+  border-radius: 12px !important;
+}

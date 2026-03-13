@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,157 +33,315 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="bg-darkBg text-gray-100 font-sans min-h-screen p-4 md:p-8 lg:p-12 overflow-x-hidden selection:bg-white/20">
 
     <!-- Subtle Background Glows (Animated) -->
-    <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen animate-blob"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen animate-blob animation-delay-2000"></div>
+    <div
+        class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen animate-blob">
+    </div>
+    <div
+        class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen animate-blob animation-delay-2000">
+    </div>
 
     <main class="max-w-5xl mx-auto relative z-10 w-full h-full">
-        
+
         <!-- Header -->
         <header class="mb-8 md:mb-12 flex justify-between items-center opacity-0 bento-element">
-            <div class="text-xl font-bold tracking-tighter hover:text-white transition-colors cursor-default">CharmCheen<span class="text-blue-500 animate-pulse">.</span></div>
-            <a href="mailto:hello@example.com" class="text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-2 group">
+            <div class="text-xl font-bold tracking-tighter hover:text-white transition-colors cursor-default">
+                CharmCheen<span class="text-blue-500 animate-pulse">.</span></div>
+            <a href="mailto:hello@example.com"
+                class="text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-2 group">
                 <i class="ph ph-envelope-simple group-hover:scale-110 transition-transform"></i>
-                <span class="hidden sm:inline">Contact Me</span>
+                <span class="hidden sm:inline">联系我</span>
             </a>
         </header>
 
         <!-- Bento Box Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-[minmax(180px,auto)]" id="bento-container">
-            
+        <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-[minmax(180px,auto)]"
+            id="bento-container">
+
             <!-- 1. Hero Card - Profile & Bio (Spans 2 cols, 2 rows) -->
-            <div class="bento-card col-span-1 md:col-span-2 md:row-span-2 p-8 flex flex-col justify-between group bento-element">
+            <div
+                class="bento-card col-span-1 md:col-span-2 md:row-span-2 p-8 flex flex-col justify-between group bento-element">
                 <div>
-                    <!-- Portrait Placeholder -->
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150" alt="Avatar" class="w-20 h-20 rounded-full object-cover mb-6 border border-white/10 shadow-lg transition-transform duration-500 hover:scale-110 hover:rotate-3">
+                    <!-- Portrait / Avatar -->
+                    <img src="picture/avatar.jpg"
+                        onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300&h=300'"
+                        alt="CharmCheen Avatar"
+                        class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover object-top mb-6 border-2 border-white/10 shadow-xl transition-transform duration-500 hover:scale-105 hover:rotate-2 bg-gray-800">
                     <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-2">CharmCheen</h1>
-                    <h2 class="text-lg text-gray-400 font-medium mb-4">AI Explorer & Visual Storyteller</h2>
+                    <h2 class="text-lg text-gray-400 font-medium mb-4">Software Engineering Major / Everyday Observer
+                    </h2>
                     <p class="text-gray-400 leading-relaxed text-sm md:text-base">
-                        专注于 AI Agent 形态演进与多智能体协同，致力于做最善于使用 AI 赋能开发的探索者。离开代码编辑器时，通常手持相机捕捉光影，在数字逻辑与现实美感之间寻找平衡。
+                        嗨，我是 CharmCheen，一个正在读大四、还在慢慢认识自己的人。<br><br>
+                        最近大部分时间都泡在大模型和多智能体这些东西里，喜欢把一堆零散的模块一点点接起来，也喜欢在冗长的日志里找到问题真正出在哪儿。对我来说，那种“终于跑通了”的瞬间，往往比空泛的技术讨论更让人踏实。<br><br>
+                        不写代码的时候，我通常会带着相机出门随便走走，拍一点光影、街景和当下觉得值得记住的瞬间。偶尔也会去 CS2 和 GTA5 里消磨时间，或者窝在 B
+                        站刷很久，从摄影分享看到人文纪录片，再看到一些带着烟火气的普通生活。<br><br>
+                        建这个主页，没有什么特别宏大的目的。更像是想给自己留一块地方，放代码，也放生活留下来的碎片；放那些做成了的东西，也放一些还没想明白、但暂时不想忘记的感受。
                     </p>
                 </div>
                 <div class="mt-8 flex gap-3 relative z-20">
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 hover:border-white/20 hover:-translate-y-1">
+                    <a href="https://github.com/CharmCheen" target="_blank"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 hover:border-white/20 hover:-translate-y-1">
                         <i class="ph ph-github-logo text-xl"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 hover:border-white/20 hover:-translate-y-1">
-                        <i class="ph ph-twitter-logo text-xl"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 hover:border-white/20 hover:-translate-y-1">
-                        <i class="ph ph-instagram-logo text-xl"></i>
+                    <a href="mailto:129147309@qq.com"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 hover:border-white/20 hover:-translate-y-1">
+                        <i class="ph ph-envelope-simple text-xl"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- 2. Skills / Tech Stack (Spans 2 cols, 1 row) -->
-            <div class="bento-card col-span-1 md:col-span-2 row-span-1 p-6 flex flex-col justify-center bento-element">
+            <!-- 2. Fun Facts / Fragments (Spans 2 cols, 1 row) -->
+            <div
+                class="bento-card col-span-1 md:col-span-2 row-span-1 p-6 flex flex-col justify-center bento-element group">
                 <h3 class="text-sm text-gray-400 font-medium uppercase tracking-wider mb-4 flex items-center gap-2">
-                    <i class="ph ph-cpu"></i> Tech Stack
+                    <i
+                        class="ph ph-coffee group-hover:text-white transition-colors duration-300 group-hover:rotate-12"></i>
+                    Fragments
                 </h3>
-                <div class="flex flex-wrap gap-2 relative z-20">
-                    <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-200 hover:bg-white/10 hover:border-white/20 transition-all cursor-default hover:-translate-y-1 hover:shadow-lg">Microsoft AutoGen</span>
-                    <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-200 hover:bg-white/10 hover:border-white/20 transition-all cursor-default hover:-translate-y-1 hover:shadow-lg">Python</span>
-                    <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-200 hover:bg-white/10 hover:border-white/20 transition-all cursor-default hover:-translate-y-1 hover:shadow-lg">C++</span>
-                    <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-200 hover:bg-white/10 hover:border-white/20 transition-all cursor-default hover:-translate-y-1 hover:shadow-lg">Reinforcement Learning</span>
-                    <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-200 hover:bg-white/10 hover:border-white/20 transition-all cursor-default hover:-translate-y-1 hover:shadow-lg">Prompt Engineering</span>
-                </div>
+                <ul class="space-y-2 text-sm text-gray-400 font-medium relative z-20">
+                    <li class="flex items-start gap-2 hover:text-gray-200 transition-colors"><span
+                            class="text-gray-600 mt-1 mx-1">•</span>日常工作是给 AI 当包工头，看着一堆 Agent 在终端里互相沟通（以及偶尔互相甩锅）。</li>
+                    <li class="flex items-start gap-2 hover:text-gray-200 transition-colors"><span
+                            class="text-gray-600 mt-1 mx-1">•</span>熟练掌握各种大模型“赛博 PUA”技巧，核心技能是把报错日志原封不动地甩给 AI。</li>
+                    <li class="flex items-start gap-2 hover:text-gray-200 transition-colors"><span
+                            class="text-gray-600 mt-1 mx-1">•</span>极度喜欢折腾新技术，初衷通常是想搞个自动化工具帮自己名正言顺地偷懒。</li>
+                    <li class="flex items-start gap-2 hover:text-gray-200 transition-colors"><span
+                            class="text-gray-600 mt-1 mx-1">•</span>是个无可救药的“昆明吹”，极其偏爱那里的气候与节奏，理想状态是带着电脑去昆明找个能晒太阳的地方喝咖啡。
+                    </li>
+                </ul>
             </div>
 
-            <!-- 3. Featured Project A (Spans 1 col, 1 row) -->
-            <a href="#" class="bento-card col-span-1 row-span-1 p-6 group cursor-pointer relative overflow-hidden flex flex-col justify-between bento-element block">
-                <div class="absolute top-4 right-4 bg-white/10 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
-                    <i class="ph ph-arrow-up-right text-sm"></i>
+            <!-- 3. Project: Subspace-GRPO (Spans 1 col, 1 row) -->
+            <a href="https://github.com/CharmCheen/PRL-addENV.git" target="_blank"
+                class="bento-card col-span-1 row-span-1 p-6 group cursor-pointer relative overflow-hidden flex flex-col justify-between bento-element block">
+                <!-- Status Pill -->
+                <div
+                    class="absolute top-4 right-4 bg-blue-900/40 border border-blue-500/30 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-2 z-10 shadow-lg">
+                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping absolute opacity-75"></span>
+                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full relative"></span>
+                    <span class="text-[10px] font-bold text-blue-100 uppercase tracking-wider">Researching</span>
                 </div>
-                <div>
-                    <div class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-blue-500/20 group-hover:border-blue-500/30 transition-all duration-300">
-                        <i class="ph ph-robot text-xl group-hover:scale-110 transition-transform"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-1">CampusMate</h3>
-                </div>
-                <p class="text-sm text-gray-500 line-clamp-3 mt-2 group-hover:text-gray-400 transition-colors">基于 AutoGen 的智慧校园多智能体协同系统</p>
-            </a>
 
-            <!-- 4. Featured Project B (Spans 1 col, 1 row) -->
-            <a href="#" class="bento-card col-span-1 row-span-1 p-6 group cursor-pointer relative overflow-hidden flex flex-col justify-between bento-element block">
-                <div class="absolute top-4 right-4 bg-white/10 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
-                    <i class="ph ph-arrow-up-right text-sm"></i>
-                </div>
-                <div>
-                    <div class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-purple-500/20 group-hover:border-purple-500/30 transition-all duration-300">
+                <div class="mt-4">
+                    <div
+                        class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-blue-500/20 group-hover:border-blue-500/30 transition-all duration-300">
                         <i class="ph ph-brain text-xl group-hover:scale-110 transition-transform"></i>
                     </div>
                     <h3 class="text-lg font-semibold mb-1">Subspace-GRPO</h3>
                 </div>
-                <p class="text-sm text-gray-500 line-clamp-3 mt-2 group-hover:text-gray-400 transition-colors">子空间下的强化学习 Prompt 自动优化框架</p>
+                <div>
+                    <p class="text-sm text-gray-500 line-clamp-3 mt-2 group-hover:text-gray-400 transition-colors">
+                        探索利用强化学习在特定子空间下自动优化 Prompt。享受把一个系统打磨顺手的过程。</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="text-xs text-blue-400">Reinforcement Learning</span>
+                        <span class="text-xs text-blue-400">LLM</span>
+                        <span class="text-xs text-blue-400">Python</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 4. Project: Multi-Agent Explorer (Spans 1 col, 1 row) -->
+            <a href="https://github.com/CharmCheen/my_autogen.git" target="_blank"
+                class="bento-card col-span-1 row-span-1 p-6 group cursor-pointer relative overflow-hidden flex flex-col justify-between bento-element block">
+                <!-- Status Pill -->
+                <div
+                    class="absolute top-4 right-4 bg-blue-900/40 border border-blue-500/30 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-2 z-10 shadow-lg">
+                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping absolute opacity-75"></span>
+                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full relative"></span>
+                    <span class="text-[10px] font-bold text-blue-100 uppercase tracking-wider">Researching</span>
+                </div>
+
+                <div class="mt-4">
+                    <div
+                        class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-purple-500/20 group-hover:border-purple-500/30 transition-all duration-300">
+                        <i class="ph ph-robot text-xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-1">Multi-Agent Explorer</h3>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500 line-clamp-3 mt-2 group-hover:text-gray-400 transition-colors">深入
+                        AutoGen 框架，探索多智能体协作模式下的任务分配与复杂逻辑闭环。</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="text-xs text-purple-400">Multi-Agent</span>
+                        <span class="text-xs text-purple-400">AutoGen</span>
+                        <span class="text-xs text-purple-400">System Design</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 5. Project: NexAU Schedule Assistant (Spans 1 col, 1 row) -->
+            <a href="https://github.com/CharmCheen/schedule_assistant_based_on_NexAU.git" target="_blank"
+                class="bento-card col-span-1 row-span-1 p-6 group cursor-pointer relative overflow-hidden flex flex-col justify-between bento-element block">
+                <!-- Status Pill -->
+                <div
+                    class="absolute top-4 right-4 bg-blue-900/40 border border-blue-500/30 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-2 z-10 shadow-lg">
+                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping absolute opacity-75"></span>
+                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full relative"></span>
+                    <span class="text-[10px] font-bold text-blue-100 uppercase tracking-wider">Researching</span>
+                </div>
+
+                <div class="mt-4">
+                    <div
+                        class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-indigo-500/20 group-hover:border-indigo-500/30 transition-all duration-300">
+                        <i class="ph ph-calendar-check text-xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-1">NexAU Schedule</h3>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500 line-clamp-3 mt-2 group-hover:text-gray-400 transition-colors">构建基于
+                        NexAU 的个人日程助手，关注 Agent 在效率工具中的实际落地场景。</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="text-xs text-indigo-400">AI Assistant</span>
+                        <span class="text-xs text-indigo-400">NexAU</span>
+                        <span class="text-xs text-indigo-400">Productivity</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 6. Project: Countryside Data Analysis (Spans 1 col, 1 row) -->
+            <a href="https://github.com/CharmCheen/Analyse_Countryside_Data.git" target="_blank"
+                class="bento-card col-span-1 row-span-1 p-6 group cursor-pointer relative overflow-hidden flex flex-col justify-between bento-element block">
+                <!-- Status Pill -->
+                <div
+                    class="absolute top-4 right-4 bg-emerald-900/20 border border-emerald-500/20 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-2 z-10 shadow-lg">
+                    <span class="w-1.5 h-1.5 bg-emerald-500/50 rounded-full relative"></span>
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Completed</span>
+                </div>
+
+                <div class="mt-4">
+                    <div
+                        class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-emerald-500/20 group-hover:border-emerald-500/30 transition-all duration-300">
+                        <i class="ph ph-chart-line-up text-xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-1">Countryside Data</h3>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500 line-clamp-3 mt-2 group-hover:text-gray-400 transition-colors">
+                        应用数据分析处理乡村地理与社会学数据，探寻技术如何洞察地域发展现状。</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="text-xs text-emerald-400">Data Analysis</span>
+                        <span class="text-xs text-emerald-400">Visualization</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 7. Project: Tech & Society Dynamics (Spans 1 col, 1 row) -->
+            <a href="https://github.com/CharmCheen/traffic-tech-society-dynamics.git" target="_blank"
+                class="bento-card col-span-1 row-span-1 p-6 group cursor-pointer relative overflow-hidden flex flex-col justify-between bento-element block">
+                <!-- Status Pill -->
+                <div
+                    class="absolute top-4 right-4 bg-emerald-900/20 border border-emerald-500/20 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-2 z-10 shadow-lg">
+                    <span class="w-1.5 h-1.5 bg-emerald-500/50 rounded-full relative"></span>
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Completed</span>
+                </div>
+
+                <div class="mt-4">
+                    <div
+                        class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-emerald-500/20 group-hover:border-emerald-500/30 transition-all duration-300">
+                        <i class="ph ph-city text-xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-1">Tech & Society</h3>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500 line-clamp-3 mt-2 group-hover:text-gray-400 transition-colors">
+                        应用数据分析探索交通技术演进与社会变迁的深层互动，用量化视角观察科技是如何切实重塑物理世界与人类生活的。</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="text-xs text-emerald-400">Data Analysis</span>
+                        <span class="text-xs text-emerald-400">Society</span>
+                    </div>
+                </div>
             </a>
 
             <!-- 5. Photography Gear (Spans 1 col, 1 row) -->
-            <div class="bento-card col-span-1 md:col-span-1 row-span-1 p-6 flex flex-col justify-center bento-element group">
+            <div
+                class="bento-card col-span-1 md:col-span-1 row-span-1 p-6 flex flex-col justify-center bento-element group">
                 <h3 class="text-sm text-gray-400 font-medium uppercase tracking-wider mb-4 flex items-center gap-2">
-                    <i class="ph ph-camera group-hover:text-white transition-colors duration-300"></i> Current Gear
+                    <i class="ph ph-camera group-hover:text-white transition-colors duration-300"></i> 目前装备
                 </h3>
                 <ul class="space-y-3 text-sm text-gray-300">
-                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default"><i class="ph ph-aperture text-gray-500 hover:rotate-90 transition-transform duration-500"></i> Sony a7c2 (Body)</li>
-                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default"><i class="ph ph-aperture text-gray-500 hover:rotate-90 transition-transform duration-500"></i> Tamron 28-75mm</li>
-                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default"><i class="ph ph-aperture text-gray-500 hover:rotate-90 transition-transform duration-500"></i> Viltrox 85mm F1.8</li>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default"><i
+                            class="ph ph-aperture text-gray-500 hover:rotate-90 transition-transform duration-500"></i>
+                        Sony a7c2 (Body)</li>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default"><i
+                            class="ph ph-aperture text-gray-500 hover:rotate-90 transition-transform duration-500"></i>
+                        Tamron 28-75mm</li>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default"><i
+                            class="ph ph-aperture text-gray-500 hover:rotate-90 transition-transform duration-500"></i>
+                        Viltrox 85mm F1.8</li>
                 </ul>
             </div>
 
-            <!-- 6. Call to Action (Spans 3 cols, 1 row) -->
-            <a href="mailto:hello@example.com" class="bento-card col-span-1 md:col-span-3 row-span-1 p-6 relative overflow-hidden group flex items-center justify-between cursor-pointer bento-element block">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="z-10 bg-white/5 absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-colors duration-500 -mr-10 -mt-10"></div>
-                <div class="z-10 relative">
-                    <h3 class="text-xl md:text-2xl font-bold mb-1 group-hover:translate-x-1 transition-transform duration-300">Let's Create & Explore</h3>
-                    <p class="text-gray-400 text-sm group-hover:translate-x-1 transition-transform duration-300 delay-75">Open for discussions about AI Agents & Visual collaborations.</p>
+
+
+            <!-- 7. Visual Stories Link Card (Full Width, Enlarged) -->
+            <a href="photography.html"
+                class="bento-card col-span-1 md:col-span-4 mt-4 py-16 px-8 bento-element w-full flex flex-col items-center justify-center text-center group cursor-pointer relative overflow-hidden block min-h-[350px]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-gray-800/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
-                <div class="z-10 relative bg-white text-black w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl transform group-hover:-rotate-45 group-hover:scale-110 transition-all duration-300 shadow-lg">
-                    <i class="ph ph-arrow-right"></i>
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-600/10 rounded-full blur-[80px] group-hover:bg-gray-500/20 transition-colors duration-700 pointer-events-none">
+                </div>
+
+                <div class="relative z-10 w-full max-w-2xl mx-auto flex flex-col items-center justify-center h-full">
+                    <div
+                        class="w-16 h-16 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-300 group-hover:text-white group-hover:bg-gray-500/20 group-hover:border-gray-500/30 transition-all duration-500 mb-6 shadow-xl group-hover:-translate-y-2">
+                        <i class="ph ph-image text-3xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+
+                    <h3
+                        class="text-3xl md:text-4xl font-bold group-hover:scale-105 transition-transform duration-500 mb-4 tracking-tight">
+                        Visual Stories</h3>
+
+                    <p
+                        class="text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-300 transition-colors px-4 mb-10">
+                        带相机出门瞎拍的日常。没有什么宏大的主题，主要是觉得当下的光线或者天气刚好，就按了快门。我应该记住，记住当下——尤其喜欢昆明，那是一座连光线都自带松弛感的城市。
+                    </p>
+
+                    <span
+                        class="inline-flex items-center gap-2 text-sm font-medium text-gray-300 group-hover:text-black transition-colors bg-white/5 px-6 py-3 border border-white/10 rounded-full backdrop-blur-md shadow-lg group-hover:bg-white overflow-hidden relative">
+                        <span class="relative z-10">进入photo gallery</span>
+                        <i
+                            class="ph ph-arrow-right font-bold w-4 h-4 ml-1 relative z-10 group-hover:translate-x-1 transition-transform"></i>
+                    </span>
                 </div>
             </a>
 
-            <!-- 7. Visual Stories (Full Width) -->
-            <div class="col-span-1 md:col-span-4 mt-4 relative z-20">
+            <div class="col-span-1 md:col-span-4 mt-8 relative z-20">
                 <div class="bento-card p-6 md:p-8 bento-element w-full flex flex-col">
-                    <div class="flex items-center justify-between mb-8">
-                        <h3 class="text-2xl font-bold flex items-center gap-3">
-                            <i class="ph ph-image text-gray-400"></i> Visual Stories
-                        </h3>
-                        <span class="text-sm text-gray-400 border border-white/10 px-3 py-1 rounded-full bg-white/5">Captured Moments</span>
+                    <div class="flex items-center gap-3 mb-8">
+                        <i class="ph ph-chat-centered-text text-2xl text-gray-400"></i>
+                        <h3 class="text-xl font-bold">讨论区</h3>
                     </div>
-                    
-                    <!-- Dynamic Photo Gallery Container -->
-                    <div id="photo-gallery" class="grid gap-4 md:gap-6 w-full" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
-                        <!-- Photos will be dynamically injected here -->
+
+                    <!-- Giscus Comments Container -->
+                    <div class="w-full min-h-[200px]">
+                        <script src="https://giscus.app/client.js" data-repo="charmcheen/charmcheen.github.io"
+                            data-repo-id="R_kgDORlxGLg" data-category="Announcements"
+                            data-category-id="DIC_kwDORlxGLs4C4Sd5" data-mapping="pathname" data-strict="0"
+                            data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom"
+                            data-theme="https://charmcheen.github.io/giscus.css" data-lang="zh-CN" data-loading="lazy"
+                            crossorigin="anonymous" async>
+                            </script>
                     </div>
                 </div>
             </div>
 
         </div>
-        
+
         <footer class="mt-12 text-center text-xs text-gray-600 opacity-0 bento-element py-4 relative z-20">
             &copy; <span id="year"></span> CharmCheen. AI Explorer & Visual Storyteller.
         </footer>
     </main>
 
-    <!-- Lightbox Modal (Hidden by Default) -->
-    <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300">
-        <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white bg-white/5 hover:bg-white/20 rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-md transition-all border border-white/10 z-50">
-            <i class="ph ph-x"></i>
-        </button>
-        <div class="relative w-full h-full flex items-center justify-center p-4">
-            <img id="lightbox-img" src="" alt="Enlarged Photo" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300">
-            <!-- Loading Spinner inside lightbox if needed -->
-            <div id="lightbox-loader" class="absolute inset-0 flex items-center justify-center hidden">
-                <i class="ph ph-spinner-gap animate-spin text-3xl text-white/50"></i>
-            </div>
-        </div>
-    </div>
+
 
     <!-- GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

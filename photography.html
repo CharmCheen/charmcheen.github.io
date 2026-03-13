@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Stories | CharmCheen</title>
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#050505',
+                        glassBg: 'rgba(255, 255, 255, 0.02)',
+                        glassBorder: 'rgba(255, 255, 255, 0.05)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-darkBg text-gray-100 font-sans min-h-screen p-4 md:p-8 lg:p-12 overflow-x-hidden selection:bg-white/20">
+
+    <!-- Subtle Background Glows -->
+    <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen animate-blob"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-gray-500/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen animate-blob animation-delay-2000"></div>
+
+    <main class="max-w-7xl mx-auto relative z-10 w-full h-full">
+        
+        <!-- Minimal Header -->
+        <header class="mb-12 flex justify-between items-center opacity-0 page-entry-anim">
+            <a href="index.html" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group cursor-pointer border border-transparent hover:border-white/10 px-3 py-1.5 rounded-full hover:bg-white/5">
+                <i class="ph ph-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+                <span class="text-sm font-medium">Back to Home</span>
+            </a>
+            <div class="text-xl font-bold tracking-tighter">CharmCheen<span class="text-gray-500">.</span>Photography</div>
+        </header>
+
+        <!-- Gallery Header -->
+        <div class="mb-12 md:mb-16 opacity-0 page-entry-anim text-center md:text-left flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 select-none">Visual Stories</h1>
+                <p class="text-gray-400 max-w-2xl leading-relaxed">
+                    A curated collection of captured light and shadow. As an AI Explorer by day, I use my Sony a7c2 to freeze moments of reality, maintaining equilibrium between dense logic and pure aesthetics.
+                </p>
+            </div>
+            
+            <div class="flex items-center justify-center md:justify-end gap-2 text-sm text-gray-500">
+                <i class="ph ph-info"></i> Click any photo to enter immersive view
+            </div>
+        </div>
+
+        <!-- Masonry-style Grid Container designed for photos -->
+        <div id="photography-gallery" class="grid gap-4 md:gap-6 w-full auto-rows-[250px]" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
+            <!-- Dynamic photos injected via JS from picture/photographer/ -->
+        </div>
+        
+        <!-- Loading State Indicator (Hidden when images start loading or fail) -->
+        <div id="gallery-loader" class="w-full flex flex-col items-center justify-center py-20 text-gray-500 gap-4 opacity-0 page-entry-anim">
+            <i class="ph ph-spinner-gap animate-spin text-3xl"></i>
+            <span class="text-sm">Mapping the darkroom...</span>
+        </div>
+        
+    </main>
+
+    <!-- Supercharged Lightbox Modal for Slider & Zoom -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/98 backdrop-blur-2xl hidden flex-col items-center justify-center opacity-0 transition-all duration-400">
+        
+        <!-- Top Control Bar -->
+        <div class="absolute top-0 w-full p-4 md:p-6 flex justify-between items-center z-50 bg-gradient-to-b from-black/80 to-transparent">
+            <div class="text-gray-400 font-medium text-sm tracking-wider" id="lightbox-counter">
+                <span id="lightbox-current" class="text-white">1</span> / <span id="lightbox-total">--</span>
+            </div>
+            
+            <div class="flex gap-4">
+                <button id="lightbox-zoom" class="text-white/70 hover:text-white bg-white/5 hover:bg-white/20 rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-md transition-all border border-white/10" title="Zoom In/Out (Double Click Image)">
+                    <i class="ph ph-magnifying-glass-plus text-xl transition-transform" id="zoom-icon"></i>
+                </button>
+                <button id="lightbox-close" class="text-white/70 hover:text-white bg-white/5 hover:bg-white/20 rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-md transition-all border border-white/10" title="Close (ESC)">
+                    <i class="ph ph-x text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Left Navigation Arrow -->
+        <button id="lightbox-prev" class="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white bg-black/40 hover:bg-white/10 rounded-full w-12 md:w-16 h-12 md:h-16 flex items-center justify-center backdrop-blur-md transition-all border border-white/5 z-50 group shadow-lg">
+            <i class="ph ph-caret-left text-2xl md:text-3xl group-hover:-translate-x-1 transition-transform"></i>
+        </button>
+
+        <!-- Image Container -->
+        <div class="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden" id="lightbox-img-container">
+            <!-- Using user-select-none and pointer-events adjustments for pure dragging/zooming mechanics -->
+            <img id="lightbox-img" src="" alt="Enlarged Photo" class="max-w-[95vw] max-h-[85vh] object-contain rounded-md shadow-2xl scale-95 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] select-none cursor-zoom-in" draggable="false">
+        </div>
+
+        <!-- Right Navigation Arrow -->
+        <button id="lightbox-next" class="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white bg-black/40 hover:bg-white/10 rounded-full w-12 md:w-16 h-12 md:h-16 flex items-center justify-center backdrop-blur-md transition-all border border-white/5 z-50 group shadow-lg">
+            <i class="ph ph-caret-right text-2xl md:text-3xl group-hover:translate-x-1 transition-transform"></i>
+        </button>
+        
+        <!-- Bottom info bar -->
+        <div class="absolute bottom-6 w-full text-center z-50 pointer-events-none opacity-50 text-xs text-gray-400 hidden md:block">
+            Use <kbd class="px-1 border border-gray-600 rounded">←</kbd> <kbd class="px-1 border border-gray-600 rounded">→</kbd> to navigate, <kbd class="px-1 border border-gray-600 rounded">ESC</kbd> to close. Double-click to zoom.
+        </div>
+    </div>
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Separate JS for the distinct logic of the photography page -->
+    <script src="photography.js"></script>
+</body>
+</html>
