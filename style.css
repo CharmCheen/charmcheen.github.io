@@ -1,0 +1,89 @@
+/* Google Fonts applied via Tailwind in HTML, but setting base typography here as fallback */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Deep space background with subtle starry/grainy illusion */
+    background-color: #050505;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(20, 20, 30, 1) 0, transparent 50%), 
+        radial-gradient(at 100% 100%, rgba(20, 15, 30, 1) 0, transparent 50%);
+    background-attachment: fixed;
+}
+
+/* Bento Card Geometry & Glassmorphism Properties */
+.bento-card {
+    /* Glass background */
+    background: rgba(255, 255, 255, 0.02);
+    /* Frosted glass blur */
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    
+    /* Ultra-thin semi-transparent border */
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    /* Soft, rounded corners Apple/Vercel style */
+    border-radius: 24px;
+    
+    /* Base shadow for depth */
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
+    
+    /* Smooth transition for all hover states */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Enable 3D transform properties */
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* Hover Physics & Glow Effect */
+.bento-card:hover {
+    /* Slight levitation */
+    transform: translateY(-4px) scale(1.005);
+    /* Brightened background and frosted visibility */
+    background: rgba(255, 255, 255, 0.04);
+    /* Illuminated borders */
+    border-color: rgba(255, 255, 255, 0.15);
+    /* Deepened drop shadow & inner glow */
+    box-shadow: 
+        0 20px 40px -10px rgba(0, 0, 0, 0.5), /* Drop shadow */
+        inset 0 1px 0 rgba(255, 255, 255, 0.1); /* Top inner gleam */
+}
+
+/* Pseudo-element for top-edge light reflection (Gleam) */
+.bento-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.bento-card:hover::before {
+    opacity: 1;
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Utility to ensure text remains readable over blur */
+.text-glow {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
