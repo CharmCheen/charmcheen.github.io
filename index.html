@@ -24,8 +24,7 @@
             }
         }
     </script>
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Phosphor Icons Removed - Replacing with local SVG -->
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
@@ -52,18 +51,23 @@
                 CharmCheen<span class="text-blue-500 animate-pulse">.</span></div>
             <a href="mailto:hello@example.com"
                 class="text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-2 group">
-                <i class="ph ph-envelope-simple group-hover:scale-110 transition-transform"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none"
+                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+                    class="group-hover:scale-110 transition-transform">
+                    <rect width="208" height="160" x="24" y="48" rx="8" ry="8" />
+                    <path d="m24 80 104 64 104-64" />
+                </svg>
                 <span class="hidden sm:inline">联系我</span>
             </a>
         </header>
 
         <!-- Bento Box Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-[minmax(180px,auto)]"
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-[minmax(180px,auto)]"
             id="bento-container">
 
             <!-- 1. Hero Card - Profile & Bio (Spans 2 cols, 2 rows) -->
             <div
-                class="bento-card col-span-1 md:col-span-2 md:row-span-2 p-8 flex flex-col justify-between group bento-element">
+                class="bento-card col-span-1 md:col-span-2 md:row-span-2 p-6 md:p-8 flex flex-col justify-between group bento-element break-words">
                 <div>
                     <!-- Portrait / Avatar -->
                     <img src="picture/avatar.jpg"
@@ -71,7 +75,7 @@
                         alt="CharmCheen Avatar"
                         class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover object-top mb-6 border-2 border-white/10 shadow-xl transition-transform duration-500 hover:scale-105 hover:rotate-2 bg-gray-800">
                     <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-2">CharmCheen</h1>
-                    <h2 class="text-lg text-gray-400 font-medium mb-4">Software Engineering Major / Everyday Observer
+                    <h2 class="text-lg text-gray-400 font-medium mb-4">Major:Software Engineering / Everyday Observer
                     </h2>
                     <p class="text-gray-400 leading-relaxed text-sm md:text-base">
                         嗨，我是 CharmCheen，一个正在读大四、还在慢慢认识自己的人。<br><br>
@@ -84,11 +88,21 @@
                 <div class="mt-8 flex gap-3 relative z-20">
                     <a href="https://github.com/CharmCheen" target="_blank"
                         class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 hover:border-white/20 hover:-translate-y-1">
-                        <i class="ph ph-github-logo text-xl"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em"
+                            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="16" class="text-xl">
+                            <path
+                                d="M128 24a104 104 0 0 0-32.89 202.6c5.22 1 7.11-2.26 7.11-5v-18.47c-29 6.29-35.1-13.91-35.1-13.91-4.75-12.06-11.6-15.27-11.6-15.27-9.5-6.5.7-6.38.7-6.38 10.49.74 16 10.8 16 10.8 9.34 16 24.51 11.39 30.5 8.7 1-6.76 3.65-11.4 6.57-14-23.14-2.63-47.5-11.57-47.5-51.48 0-11.37 4.09-20.67 10.74-27.95-1.08-2.62-4.66-13.2 1-27.53 0 0 8.76-2.8 28.69 10.68A99 99 0 0 1 128 85c8.8.06 17.65 1.18 25.8 3.51 19.89-13.48 28.6-10.68 28.6-10.68 5.68 14.33 2.15 24.91 1.07 27.53 6.69 7.28 10.74 16.58 10.74 27.95 0 39.79-24.31 48.79-47.38 51.37 3.74 3.22 7.11 9.58 7.11 19.3v28.67c0 2.78 1.86 6 7.14 5A104 104 0 0 0 128 24Z" />
+                        </svg>
                     </a>
                     <a href="mailto:129147309@qq.com"
                         class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 hover:border-white/20 hover:-translate-y-1">
-                        <i class="ph ph-envelope-simple text-xl"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em"
+                            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="16" class="text-xl">
+                            <rect width="208" height="160" x="24" y="48" rx="8" ry="8" />
+                            <path d="m24 80 104 64 104-64" />
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -97,8 +111,12 @@
             <div
                 class="bento-card col-span-1 md:col-span-2 row-span-1 p-6 flex flex-col justify-center bento-element group">
                 <h3 class="text-sm text-gray-400 font-medium uppercase tracking-wider mb-4 flex items-center gap-2">
-                    <i
-                        class="ph ph-coffee group-hover:text-white transition-colors duration-300 group-hover:rotate-12"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="group-hover:text-white transition-colors duration-300 group-hover:rotate-12">
+                        <path d="M88 24v40M128 24v40M168 24v40"/>
+                        <line x1="24" y1="216" x2="232" y2="216"/>
+                        <path d="M72 104v32a56 56 0 0 0 112 0v-32"/>
+                        <path d="M184 104h20a28 28 0 0 1 0 56h-20"/>
+                    </svg>
                     Fragments
                 </h3>
                 <ul class="space-y-2 text-sm text-gray-400 font-medium relative z-20">
@@ -128,7 +146,10 @@
                 <div class="mt-4">
                     <div
                         class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-blue-500/20 group-hover:border-blue-500/30 transition-all duration-300">
-                        <i class="ph ph-brain text-xl group-hover:scale-110 transition-transform"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="text-xl group-hover:scale-110 transition-transform">
+                            <path d="M128 72a40 40 0 1 0-78.63 10.42 40 40 0 1 0-5.75 66.36 40 40 0 0 0 69.46 36A40 40 0 0 0 128 152v64"/>
+                            <path d="M128 72a40 40 0 1 1 78.63 10.42 40 40 0 1 1 5.75 66.36 40 40 0 0 1-69.46 36A40 40 0 0 1 128 152"/>
+                        </svg>
                     </div>
                     <h3 class="text-lg font-semibold mb-1">Subspace-GRPO</h3>
                 </div>
@@ -157,7 +178,13 @@
                 <div class="mt-4">
                     <div
                         class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-purple-500/20 group-hover:border-purple-500/30 transition-all duration-300">
-                        <i class="ph ph-robot text-xl group-hover:scale-110 transition-transform"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="text-xl group-hover:scale-110 transition-transform">
+                            <rect width="144" height="128" x="56" y="80" rx="24"/>
+                            <path d="M128 80V40M104 40h48M56 128H32M200 128h24"/>
+                            <circle cx="96" cy="136" r="16" fill="currentColor" stroke="none"/>
+                            <circle cx="160" cy="136" r="16" fill="currentColor" stroke="none"/>
+                            <path d="M96 176h64"/>
+                        </svg>
                     </div>
                     <h3 class="text-lg font-semibold mb-1">Multi-Agent Explorer</h3>
                 </div>
@@ -186,7 +213,13 @@
                 <div class="mt-4">
                     <div
                         class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-indigo-500/20 group-hover:border-indigo-500/30 transition-all duration-300">
-                        <i class="ph ph-calendar-check text-xl group-hover:scale-110 transition-transform"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="text-xl group-hover:scale-110 transition-transform">
+                            <rect width="176" height="176" x="40" y="40" rx="8"/>
+                            <line x1="176" y1="24" x2="176" y2="56"/>
+                            <line x1="80" y1="24" x2="80" y2="56"/>
+                            <line x1="40" y1="88" x2="216" y2="88"/>
+                            <path d="m104 144 24 24 48-48"/>
+                        </svg>
                     </div>
                     <h3 class="text-lg font-semibold mb-1">NexAU Schedule</h3>
                 </div>
@@ -214,7 +247,11 @@
                 <div class="mt-4">
                     <div
                         class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-emerald-500/20 group-hover:border-emerald-500/30 transition-all duration-300">
-                        <i class="ph ph-chart-line-up text-xl group-hover:scale-110 transition-transform"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="text-xl group-hover:scale-110 transition-transform">
+                            <polyline points="224 208 32 208 32 48"/>
+                            <polyline points="224 96 160 152 96 104 32 160"/>
+                            <polyline points="176 96 224 96 224 144"/>
+                        </svg>
                     </div>
                     <h3 class="text-lg font-semibold mb-1">Countryside Data</h3>
                 </div>
@@ -241,7 +278,13 @@
                 <div class="mt-4">
                     <div
                         class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-emerald-500/20 group-hover:border-emerald-500/30 transition-all duration-300">
-                        <i class="ph ph-city text-xl group-hover:scale-110 transition-transform"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="text-xl group-hover:scale-110 transition-transform">
+                            <path d="M16 216h224M88 216V40a8 8 0 0 1 8-8h64a8 8 0 0 1 8 8v176"/>
+                            <path d="M40 216v-80a8 8 0 0 1 8-8h40M168 216v-64a8 8 0 0 1 8-8h40a8 8 0 0 1 8 8v64"/>
+                            <line x1="128" y1="80" x2="168" y2="80"/>
+                            <line x1="128" y1="120" x2="168" y2="120"/>
+                            <line x1="128" y1="160" x2="168" y2="160"/>
+                        </svg>
                     </div>
                     <h3 class="text-lg font-semibold mb-1">Tech & Society</h3>
                 </div>
@@ -259,17 +302,27 @@
             <div
                 class="bento-card col-span-1 md:col-span-1 row-span-1 p-6 flex flex-col justify-center bento-element group">
                 <h3 class="text-sm text-gray-400 font-medium uppercase tracking-wider mb-4 flex items-center gap-2">
-                    <i class="ph ph-camera group-hover:text-white transition-colors duration-300"></i> 目前装备
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="group-hover:text-white transition-colors duration-300">
+                        <rect width="208" height="144" x="24" y="80" rx="16"/>
+                        <circle cx="128" cy="152" r="32"/>
+                        <path d="M72 80V56a8 8 0 0 1 8-8h96a8 8 0 0 1 8 8v24"/>
+                    </svg> 目前装备
                 </h3>
                 <ul class="space-y-3 text-sm text-gray-300">
-                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default"><i
-                            class="ph ph-aperture text-gray-500 hover:rotate-90 transition-transform duration-500"></i>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="text-gray-500 hover:rotate-90 transition-transform duration-500">
+                            <circle cx="128" cy="128" r="96"/><circle cx="128" cy="128" r="32"/>
+                        </svg>
                         Sony a7c2 (Body)</li>
-                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default"><i
-                            class="ph ph-aperture text-gray-500 hover:rotate-90 transition-transform duration-500"></i>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="text-gray-500 hover:rotate-90 transition-transform duration-500">
+                            <circle cx="128" cy="128" r="96"/><circle cx="128" cy="128" r="32"/>
+                        </svg>
                         Tamron 28-75mm</li>
-                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default"><i
-                            class="ph ph-aperture text-gray-500 hover:rotate-90 transition-transform duration-500"></i>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors cursor-default">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="text-gray-500 hover:rotate-90 transition-transform duration-500">
+                            <circle cx="128" cy="128" r="96"/><circle cx="128" cy="128" r="32"/>
+                        </svg>
                         Viltrox 85mm F1.8</li>
                 </ul>
             </div>
@@ -278,7 +331,7 @@
 
             <!-- 7. Visual Stories Link Card (Full Width, Enlarged) -->
             <a href="photography.html"
-                class="bento-card col-span-1 md:col-span-4 mt-4 py-16 px-8 bento-element w-full flex flex-col items-center justify-center text-center group cursor-pointer relative overflow-hidden block min-h-[350px]">
+                class="bento-card col-span-1 md:col-span-2 lg:col-span-4 mt-4 py-12 px-6 md:py-16 md:px-8 bento-element w-full flex flex-col items-center justify-center text-center group cursor-pointer relative overflow-hidden block min-h-[350px]">
                 <div
                     class="absolute inset-0 bg-gradient-to-b from-gray-800/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
@@ -289,7 +342,11 @@
                 <div class="relative z-10 w-full max-w-2xl mx-auto flex flex-col items-center justify-center h-full">
                     <div
                         class="w-16 h-16 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-300 group-hover:text-white group-hover:bg-gray-500/20 group-hover:border-gray-500/30 transition-all duration-500 mb-6 shadow-xl group-hover:-translate-y-2">
-                        <i class="ph ph-image text-3xl group-hover:scale-110 transition-transform"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="text-3xl group-hover:scale-110 transition-transform">
+                            <rect width="208" height="160" x="24" y="48" rx="16"/>
+                            <circle cx="88" cy="104" r="16" fill="currentColor" stroke="none"/>
+                            <path d="M24 160l64-64 120 120M232 168v24a16 16 0 0 1-16 16H40"/>
+                        </svg>
                     </div>
 
                     <h3
@@ -304,16 +361,22 @@
                     <span
                         class="inline-flex items-center gap-2 text-sm font-medium text-gray-300 group-hover:text-black transition-colors bg-white/5 px-6 py-3 border border-white/10 rounded-full backdrop-blur-md shadow-lg group-hover:bg-white overflow-hidden relative">
                         <span class="relative z-10">进入photo gallery</span>
-                        <i
-                            class="ph ph-arrow-right font-bold w-4 h-4 ml-1 relative z-10 group-hover:translate-x-1 transition-transform"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" class="font-bold w-4 h-4 ml-1 relative z-10 group-hover:translate-x-1 transition-transform">
+                            <line x1="40" y1="128" x2="216" y2="128"/>
+                            <polyline points="144 56 216 128 144 200"/>
+                        </svg>
                     </span>
                 </div>
             </a>
 
-            <div class="col-span-1 md:col-span-4 mt-8 relative z-20">
+            <div class="col-span-1 md:col-span-2 lg:col-span-4 mt-8 relative z-20">
                 <div class="bento-card p-6 md:p-8 bento-element w-full flex flex-col">
                     <div class="flex items-center gap-3 mb-8">
-                        <i class="ph ph-chat-centered-text text-2xl text-gray-400"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="text-2xl text-gray-400">
+                            <path d="M128 24C66.14 24 16 70.57 16 128c0 28.52 13 54.34 33.64 73.18V232l48-24.87c9 2.59 18.57 4 28.36 4 61.86 0 112-46.57 112-104.56S189.86 24 128 24Z"/>
+                            <line x1="88" y1="104" x2="168" y2="104"/>
+                            <line x1="88" y1="144" x2="168" y2="144"/>
+                        </svg>
                         <h3 class="text-xl font-bold">讨论区</h3>
                     </div>
 
