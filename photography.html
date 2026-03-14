@@ -54,7 +54,7 @@
             <div>
                 <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 select-none">Visual Stories</h1>
                 <p class="text-gray-400 max-w-2xl leading-relaxed">
-                    A curated collection of captured light and shadow. As an AI Explorer by day, I use my Sony a7c2 to freeze moments of reality, maintaining equilibrium between dense logic and pure aesthetics.
+                    Some casual shots when the light or weather felt just right. No grand themes, just freezing moments worth remembering. A quiet space to disconnect from the dense logic of daily work.
                 </p>
             </div>
             
@@ -74,10 +74,16 @@
             <span class="text-sm">Mapping the darkroom...</span>
         </div>
         
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-xs text-gray-500 opacity-0 page-entry-anim py-8 relative z-20 w-full mb-4">
+            <p>&copy; 2026 CharmCheen. All Rights Reserved.</p>
+            <p class="mt-2 text-gray-600">Designed & Built by CharmCheen | AI Explorer & Visual Storyteller</p>
+        </footer>
+        
     </main>
 
     <!-- Supercharged Lightbox Modal for Slider & Zoom -->
-    <div id="lightbox" class="fixed inset-0 z-50 bg-black/98 backdrop-blur-2xl hidden flex-col items-center justify-center opacity-0 transition-all duration-400">
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/98 backdrop-blur-2xl hidden flex-col items-center justify-center opacity-0 transition-opacity duration-400">
         
         <!-- Top Control Bar -->
         <div class="absolute top-0 w-full p-4 md:p-6 flex justify-between items-center z-50 bg-gradient-to-b from-black/80 to-transparent">
@@ -103,7 +109,7 @@
         <!-- Image Container -->
         <div class="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden" id="lightbox-img-container">
             <!-- Using user-select-none and pointer-events adjustments for pure dragging/zooming mechanics -->
-            <img id="lightbox-img" src="" alt="Enlarged Photo" class="max-w-[95vw] max-h-[85vh] object-contain rounded-md shadow-2xl scale-95 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] select-none cursor-zoom-in" draggable="false">
+            <img id="lightbox-img" src="" alt="Enlarged Photo" class="max-w-[90vw] max-h-[85vh] object-contain rounded-md shadow-2xl scale-95 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] select-none cursor-zoom-in" draggable="false">
         </div>
 
         <!-- Right Navigation Arrow -->

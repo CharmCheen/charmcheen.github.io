@@ -20,14 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // State array holding valid image sources
     const loadedImagesSrc = [];
     
-    // Used to vary the grid spans slightly for a masonry-feel without JS calculation overhead
-    const getGridSpanClass = (index) => {
-        // Create an interesting pattern for masonry look (landscape/portrait mixes)
-        // 1=normal, span-2=wide. Note: Requires photo-item custom css spans or tailwind
-        const pattern = index % 5;
-        if (pattern === 0 || pattern === 3) return "md:col-span-2 md:row-span-2"; // Large hero
-        if (pattern === 1) return "md:col-span-1 md:row-span-2"; // Tall portrait
-        return "md:col-span-1 md:row-span-1"; // Standard 1x1 cell
+    // Used to read the image aspect ratio and assign dynamic masonry spans gracefully
+    const getGridSpanClass = (img, index) => {
+        const ratio = img.naturalWidth / img.naturalHeight;
+        if (ratio > 2.0) {
+            return "md:col-span-2 md:row-span-1"; // Extreme landscape
+        } else if (ratio > 1.25) {
+            return index % 4 === 0 ? "md:col-span-2 md:row-span-2" : "md:col-span-2 md:row-span-1";
+        } else if (ratio < 0.6) {
+            return "md:col-span-1 md:row-span-2"; // Extreme portrait
+        } else if (ratio < 0.85) {
+            return "md:col-span-1 md:row-span-2";
+        } else {
+            return index % 5 === 0 ? "md:col-span-2 md:row-span-2" : "md:col-span-1 md:row-span-1";
+        }
     };
 
     if (galleryContainer) {
@@ -61,10 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 const wrapper = document.createElement('div');
                 // Apply masonry span classes dynamically
-                const spanClass = getGridSpanClass(index);
+                const spanClass = getGridSpanClass(img, index);
                 wrapper.className = `photo-item flex items-center justify-center bg-white/5 opacity-0 translate-y-8 scale-95 ${spanClass}`;
                 
-                img.className = "w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03] select-none";
+                img.className = "w-full h-full object-cover select-none";
                 img.loading = "lazy";
                 
                 wrapper.appendChild(img);
@@ -122,12 +128,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Swap image src with a tiny fade effect
         gsap.to(lightboxImg, {
-            opacity: 0, scale: 0.98, duration: 0.2, onComplete: () => {
+            opacity: 0, scale: 0.98, duration: 0.15, onComplete: () => {
                 lightboxImg.src = loadedImagesSrc[currentLightboxIndex];
                 
                 // Wait for image loaded to fade back in
                 lightboxImg.onload = () => {
-                    gsap.to(lightboxImg, { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" });
+                    gsap.to(lightboxImg, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" });
                 };
             }
         });
@@ -136,24 +142,30 @@ document.addEventListener("DOMContentLoaded", () => {
         if(countCurrent) countCurrent.textContent = currentLightboxIndex + 1;
         if(countTotal) countTotal.textContent = loadedImagesSrc.length;
 
-        // Visual feedback on arrows (dim them if at boundary)
+        // Visual feedback on arrows (disable states seamlessly with transitions)
         if(btnPrev) {
+            btnPrev.style.transition = 'opacity 0.3s ease, transform 0.3s';
             if(currentLightboxIndex === 0) {
-                btnPrev.classList.replace('text-white/50', 'text-white/10');
-                btnPrev.classList.replace('hover:text-white', 'cursor-not-allowed');
+                btnPrev.style.opacity = '0.15';
+                btnPrev.style.pointerEvents = 'none';
+                btnPrev.style.cursor = 'default';
             } else {
-                btnPrev.classList.replace('text-white/10', 'text-white/50');
-                btnPrev.classList.replace('cursor-not-allowed', 'hover:text-white');
+                btnPrev.style.opacity = '';
+                btnPrev.style.pointerEvents = 'auto';
+                btnPrev.style.cursor = 'pointer';
             }
         }
         
         if(btnNext) {
+            btnNext.style.transition = 'opacity 0.3s ease, transform 0.3s';
             if(currentLightboxIndex === loadedImagesSrc.length - 1) {
-                btnNext.classList.replace('text-white/50', 'text-white/10');
-                btnNext.classList.replace('hover:text-white', 'cursor-not-allowed');
+                btnNext.style.opacity = '0.15';
+                btnNext.style.pointerEvents = 'none';
+                btnNext.style.cursor = 'default';
             } else {
-                btnNext.classList.replace('text-white/10', 'text-white/50');
-                btnNext.classList.replace('cursor-not-allowed', 'hover:text-white');
+                btnNext.style.opacity = '';
+                btnNext.style.pointerEvents = 'auto';
+                btnNext.style.cursor = 'pointer';
             }
         }
     };
@@ -175,15 +187,32 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Zooming Mechanics
+    let translateX = 0, translateY = 0;
+    let isDragging = false;
+    let startX = 0, startY = 0;
+
     const toggleZoom = (e) => {
         if(e) e.stopPropagation();
         isZoomed = !isZoomed;
         
         if (isZoomed) {
-            // Apply zoom scale
-            lightboxImg.style.transform = 'scale(2)';
-            lightboxImg.classList.replace('cursor-zoom-in', 'cursor-zoom-out');
-            lightboxImg.classList.add('cursor-grab'); // Hint it might be panable if logic added
+            // Natural Center: determine transform origin based on click coordinates if available
+            if (e && e.type === 'dblclick') {
+                const rect = lightboxImg.getBoundingClientRect();
+                const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+                const y = Math.max(0, Math.min(e.clientY - rect.top, rect.height));
+                lightboxImg.style.transformOrigin = `${(x / rect.width) * 100}% ${(y / rect.height) * 100}%`;
+            } else {
+                lightboxImg.style.transformOrigin = 'center center';
+            }
+
+            translateX = 0;
+            translateY = 0;
+
+            // Apply smooth zoom scale
+            lightboxImg.style.transform = 'translate(0px, 0px) scale(2.2)';
+            lightboxImg.classList.remove('cursor-zoom-in', 'cursor-zoom-out');
+            lightboxImg.style.cursor = 'grab';
             
             // Swap UI Icon
             if(zoomIcon) {
@@ -196,10 +225,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const resetZoomState = () => {
         isZoomed = false;
+        isDragging = false;
         if(lightboxImg) {
-            lightboxImg.style.transform = 'scale(1)';
-            lightboxImg.classList.replace('cursor-zoom-out', 'cursor-zoom-in');
-            lightboxImg.classList.remove('cursor-grab');
+            translateX = 0;
+            translateY = 0;
+            lightboxImg.style.transform = 'translate(0px, 0px) scale(1)';
+            lightboxImg.style.transition = ''; // restore if stuck
+            lightboxImg.style.cursor = '';
+            // Retain transformOrigin so the transition un-zooms smoothly to the original spot
+            if(!lightboxImg.classList.contains('cursor-zoom-in')) {
+                lightboxImg.classList.add('cursor-zoom-in');
+            }
         }
         if(zoomIcon) {
             zoomIcon.classList.replace('ph-magnifying-glass-minus', 'ph-magnifying-glass-plus');
@@ -236,11 +272,50 @@ document.addEventListener("DOMContentLoaded", () => {
         if(btnNext) btnNext.addEventListener('click', navigateNext);
         if(btnPrev) btnPrev.addEventListener('click', navigatePrev);
         
-        // Double click image to zoom
+        // Double click image to zoom & Panning Events
         if(lightboxImg) {
             lightboxImg.addEventListener('dblclick', toggleZoom);
             // Prevent event bubbling on single click of image (so it doesn't trigger background close)
             lightboxImg.addEventListener('click', (e) => e.stopPropagation());
+
+            // Panning Mechanics
+            const startDrag = (e) => {
+                if(!isZoomed) return;
+                if(e.type === 'mousedown') e.preventDefault(); // prevent ghost image drag browser default
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                
+                isDragging = true;
+                startX = clientX - translateX;
+                startY = clientY - translateY;
+                lightboxImg.style.transition = 'none'; // pure realtime dragging
+                lightboxImg.style.cursor = 'grabbing';
+            };
+
+            const doDrag = (e) => {
+                if(!isDragging || !isZoomed) return;
+                if(e.cancelable && e.type === 'touchmove') e.preventDefault(); 
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                translateX = clientX - startX;
+                translateY = clientY - startY;
+                lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(2.2)`;
+            };
+
+            const endDrag = () => {
+                if(!isDragging) return;
+                isDragging = false;
+                lightboxImg.style.transition = ''; // restore tailwind transition
+                lightboxImg.style.cursor = 'grab';
+            };
+
+            lightboxImg.addEventListener('mousedown', startDrag);
+            window.addEventListener('mousemove', doDrag, { passive: false });
+            window.addEventListener('mouseup', endDrag);
+
+            lightboxImg.addEventListener('touchstart', startDrag, { passive: true });
+            window.addEventListener('touchmove', doDrag, { passive: false });
+            window.addEventListener('touchend', endDrag);
         }
 
         // Dedicated zoom button

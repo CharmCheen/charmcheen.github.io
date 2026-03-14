@@ -97,7 +97,7 @@ a.bento-card {
     border-radius: 12px;
     overflow: hidden;
     position: relative;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
     cursor: zoom-in;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
@@ -106,7 +106,8 @@ a.bento-card {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 40%);
+    /* Subtly brighten the image on hover instead of heavy dark gradient */
+    background: rgba(255, 255, 255, 0.04);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -117,9 +118,9 @@ a.bento-card {
 }
 
 .photo-item:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
-    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.15);
     z-index: 10;
 }
 
