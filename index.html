@@ -16,6 +16,11 @@
                         darkBg: '#0a0a0a',
                         glassBg: 'rgba(255, 255, 255, 0.03)',
                         glassBorder: 'rgba(255, 255, 255, 0.08)',
+                        fudan: {
+                            DEFAULT: '#0034B3', // 官方复旦蓝
+                            light: '#4D7DFF',   // 适配深色模式的高亮蓝
+                            dark: '#001A5C',    // 深色背景蓝
+                        }
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -37,7 +42,7 @@
 
     <!-- Subtle Background Glows (Animated) -->
     <div
-        class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen animate-blob">
+        class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-fudan/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen animate-blob">
     </div>
     <div
         class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen animate-blob animation-delay-2000">
@@ -48,7 +53,7 @@
         <!-- Header -->
         <header class="mb-8 md:mb-12 flex justify-between items-center opacity-0 bento-element">
             <div class="text-xl font-bold tracking-tighter hover:text-white transition-colors cursor-default">
-                CharmCheen<span class="text-blue-500 animate-pulse">.</span></div>
+                CharmCheen<span class="text-fudan animate-pulse drop-shadow-[0_0_8px_rgba(0,52,179,0.6)]">.</span></div>
             <a href="mailto:hello@example.com"
                 class="text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-2 group">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none"
@@ -137,15 +142,15 @@
                 class="bento-card col-span-1 row-span-1 p-6 group cursor-pointer relative overflow-hidden flex flex-col justify-between bento-element block">
                 <!-- Status Pill -->
                 <div
-                    class="absolute top-4 right-4 bg-blue-900/40 border border-blue-500/30 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-2 z-10 shadow-lg">
-                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping absolute opacity-75"></span>
-                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full relative"></span>
-                    <span class="text-[10px] font-bold text-blue-100 uppercase tracking-wider">Researching</span>
+                    class="absolute top-4 right-4 bg-fudan-dark/60 border border-fudan/30 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-2 z-10 shadow-lg">
+                    <span class="w-1.5 h-1.5 bg-fudan-light rounded-full animate-ping absolute opacity-75"></span>
+                    <span class="w-1.5 h-1.5 bg-fudan-light rounded-full relative"></span>
+                    <span class="text-[10px] font-bold text-gray-200 uppercase tracking-wider">Researching</span>
                 </div>
 
                 <div class="mt-4">
                     <div
-                        class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-blue-500/20 group-hover:border-blue-500/30 transition-all duration-300">
+                        class="w-10 h-10 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4 text-gray-300 group-hover:text-white group-hover:bg-fudan/20 group-hover:border-fudan/30 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" class="text-xl group-hover:scale-110 transition-transform">
                             <path d="M128 72a40 40 0 1 0-78.63 10.42 40 40 0 1 0-5.75 66.36 40 40 0 0 0 69.46 36A40 40 0 0 0 128 152v64"/>
                             <path d="M128 72a40 40 0 1 1 78.63 10.42 40 40 0 1 1 5.75 66.36 40 40 0 0 1-69.46 36A40 40 0 0 1 128 152"/>
@@ -157,9 +162,9 @@
                     <p class="text-sm text-gray-500 line-clamp-3 mt-2 group-hover:text-gray-400 transition-colors">
                         探索利用强化学习在特定子空间下自动优化 Prompt。享受把一个系统打磨顺手的过程。</p>
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="text-xs text-blue-400">Reinforcement Learning</span>
-                        <span class="text-xs text-blue-400">LLM</span>
-                        <span class="text-xs text-blue-400">Python</span>
+                        <span class="text-xs text-fudan-light">Reinforcement Learning</span>
+                        <span class="text-xs text-fudan-light">LLM</span>
+                        <span class="text-xs text-fudan-light">Python</span>
                     </div>
                 </div>
             </a>
@@ -169,10 +174,10 @@
                 class="bento-card col-span-1 row-span-1 p-6 group cursor-pointer relative overflow-hidden flex flex-col justify-between bento-element block">
                 <!-- Status Pill -->
                 <div
-                    class="absolute top-4 right-4 bg-blue-900/40 border border-blue-500/30 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-2 z-10 shadow-lg">
-                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping absolute opacity-75"></span>
-                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full relative"></span>
-                    <span class="text-[10px] font-bold text-blue-100 uppercase tracking-wider">Researching</span>
+                    class="absolute top-4 right-4 bg-fudan-dark/60 border border-fudan/30 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-2 z-10 shadow-lg">
+                    <span class="w-1.5 h-1.5 bg-fudan-light rounded-full animate-ping absolute opacity-75"></span>
+                    <span class="w-1.5 h-1.5 bg-fudan-light rounded-full relative"></span>
+                    <span class="text-[10px] font-bold text-gray-200 uppercase tracking-wider">Researching</span>
                 </div>
 
                 <div class="mt-4">
@@ -204,10 +209,10 @@
                 class="bento-card col-span-1 row-span-1 p-6 group cursor-pointer relative overflow-hidden flex flex-col justify-between bento-element block">
                 <!-- Status Pill -->
                 <div
-                    class="absolute top-4 right-4 bg-blue-900/40 border border-blue-500/30 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-2 z-10 shadow-lg">
-                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping absolute opacity-75"></span>
-                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full relative"></span>
-                    <span class="text-[10px] font-bold text-blue-100 uppercase tracking-wider">Researching</span>
+                    class="absolute top-4 right-4 bg-fudan-dark/60 border border-fudan/30 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-2 z-10 shadow-lg">
+                    <span class="w-1.5 h-1.5 bg-fudan-light rounded-full animate-ping absolute opacity-75"></span>
+                    <span class="w-1.5 h-1.5 bg-fudan-light rounded-full relative"></span>
+                    <span class="text-[10px] font-bold text-gray-200 uppercase tracking-wider">Researching</span>
                 </div>
 
                 <div class="mt-4">
@@ -398,6 +403,7 @@
         <footer class="mt-12 text-center text-xs text-gray-500 opacity-0 bento-element py-8 relative z-20 md:mt-16">
             <p>&copy; <span id="year"></span> CharmCheen. All Rights Reserved.</p>
             <p class="mt-2 text-gray-600">Designed & Built by CharmCheen | AI Explorer & Visual Storyteller</p>
+            <p class="mt-1 text-[10px] text-white/5 hover:text-fudan-light transition-colors duration-500 cursor-default select-none">Based at FDU</p>
         </footer>
     </main>
 
