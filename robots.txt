@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://charmcheen.github.io/sitemap.xml
