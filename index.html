@@ -18,8 +18,8 @@
     <meta name="twitter:image" content="https://charmcheen.github.io/picture/og-image.jpg">
     <link rel="canonical" href="https://charmcheen.github.io/">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="preload" as="image" href="picture/mainphoto.jpg">
-    <link rel="stylesheet" href="style.css?v=20260922-9">
+    <link rel="preload" as="image" href="picture/mainphoto-336.webp" type="image/webp">
+    <link rel="stylesheet" href="style.css?v=20260922-11">
 </head>
 <body class="home-page">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -46,11 +46,8 @@
                         M.S. Student in Computer Science<br>
                         <a href="https://www.fudan.edu.cn/en/" target="_blank" rel="noopener noreferrer">Fudan University</a> · <a href="https://daslab.fudan.edu.cn/" target="_blank" rel="noopener noreferrer">DASLab</a>
                     </p>
-                    <p class="hero-interests">
-                        Database Systems · AI/Data Infrastructure · Data Processing Systems
-                    </p>
                     <p class="hero-statement">
-                        I am interested in data processing systems for modern AI workloads, with a current focus on physical execution, data organization, and adaptive optimization.
+                        I am interested in database systems and data infrastructure for AI workloads.
                     </p>
                     <div class="hero-links" aria-label="Profile and contact links">
                         <a href="mailto:chqin26@m.fudan.edu.cn">Email <span class="link-arrow" aria-hidden="true">↗</span></a>
@@ -58,7 +55,7 @@
                     </div>
                 </div>
                 <figure class="hero-portrait">
-                    <img src="picture/mainphoto.jpg" alt="Portrait of Changhao Qin" width="112" height="112">
+                    <img src="picture/mainphoto-336.webp" alt="Portrait of Changhao Qin" width="112" height="112">
                 </figure>
             </div>
         </section>
@@ -67,19 +64,16 @@
             <h2 id="about-title" class="section-title">About</h2>
             <div class="section-body">
                 <p>
-                    I am a first-year M.S. student in Computer Science at <a href="https://www.fudan.edu.cn/en/" target="_blank" rel="noopener noreferrer">Fudan University</a>, affiliated with <a href="https://daslab.fudan.edu.cn/" target="_blank" rel="noopener noreferrer">DASLab</a>. Prior to joining Fudan, I completed my B.S. in Software Engineering at <a href="https://www.whut.edu.cn/" target="_blank" rel="noopener noreferrer">Wuhan University of Technology</a>.
-                </p>
-                <p>
-                    My broad interests lie in Database Systems and AI/Data Infrastructure. I am particularly interested in the execution layer of modern data-processing systems—including physical operator execution, data organization, scheduling, placement, and adaptive optimization. I am drawn to understanding how traditional database systems abstractions interact with and can be redesigned for large-scale, heterogeneous AI workloads.
+                    I am a first-year master’s student in Computer Science at <a href="https://www.fudan.edu.cn/en/" target="_blank" rel="noopener noreferrer">Fudan University</a> and a member of <a href="https://daslab.fudan.edu.cn/" target="_blank" rel="noopener noreferrer">DASLab</a>. I received my bachelor’s degree in Software Engineering from <a href="https://www.whut.edu.cn/" target="_blank" rel="noopener noreferrer">Wuhan University of Technology</a>.
                 </p>
             </div>
         </section>
 
         <section class="page-section" id="research" aria-labelledby="research-title">
-            <h2 id="research-title" class="section-title">Currently</h2>
+            <h2 id="research-title" class="section-title">Research</h2>
             <div class="section-body">
                 <p>
-                    I am currently exploring data infrastructure for large-scale AI workloads, especially how modern data-processing workloads challenge the assumptions behind physical execution and optimization.
+                    My current interests center on the execution layer of data-processing systems: physical operators, data organization, and scheduling. I am exploring how these components can adapt to the demands of heterogeneous AI workloads.
                 </p>
                 <div class="research-flow" aria-label="Research focus progression">
                     <span class="flow-node">AI / Data Infrastructure</span>
@@ -105,12 +99,12 @@
                         <span class="project-category">Personal Knowledge System</span>
                     </div>
                     <p class="project-desc">
-                        A backend-oriented personal knowledge system built around a grounded RAG pipeline. The system uses explicit source identities, formal ingest and retrieval models, runtime adapters, and service boundaries, with support for incremental source maintenance, multi-format ingestion, event-stream execution, and retrieval evaluation utilities.
+                        I am developing a personal knowledge system that connects retrieved information to its sources. My work focuses on source tracking, incremental ingestion, and retrieval evaluation in the RAG backend.
                     </p>
                     <div class="project-footer">
                         <span class="project-stack">Python · RAG · System Design</span>
                         <div class="project-links">
-                            <a href="https://github.com/CharmCheen/minddock" target="_blank" rel="noopener noreferrer">GitHub <span class="link-arrow" aria-hidden="true">↗</span></a>
+                            <a href="https://github.com/CharmCheen/minddock#readme" target="_blank" rel="noopener noreferrer">README <span class="link-arrow" aria-hidden="true">↗</span></a>
                         </div>
                     </div>
                 </article>
@@ -124,7 +118,7 @@
                         <span class="project-category">Deep Research Agent Extension</span>
                     </div>
                     <p class="project-desc">
-                        An experimental extension of the open-source NexDR deep-research agent. My modifications explore a Markdown-first research workflow, post-generation manual revision, page-aware local PDF ingestion, local image metadata with optional captioning, and explicit academic search backends for Semantic Scholar and arXiv.
+                        An experimental extension of NexDR for academic research. My modifications explore editable Markdown reports, PDF ingestion with page references, and integration with Semantic Scholar and arXiv.
                     </p>
                     <p class="project-attribution">
                         Based on <a href="https://github.com/nex-agi/NexDR" target="_blank" rel="noopener noreferrer">nex-agi/NexDR <span class="link-arrow" aria-hidden="true">↗</span></a>
@@ -132,7 +126,7 @@
                     <div class="project-footer">
                         <span class="project-stack">Python · Agent Systems · Research Tooling</span>
                         <div class="project-links">
-                            <a href="https://github.com/CharmCheen/NexDR-Enhanced" target="_blank" rel="noopener noreferrer">GitHub <span class="link-arrow" aria-hidden="true">↗</span></a>
+                            <a href="https://github.com/CharmCheen/NexDR-Enhanced#readme" target="_blank" rel="noopener noreferrer">README <span class="link-arrow" aria-hidden="true">↗</span></a>
                             <a href="https://github.com/nex-agi/NexDR" target="_blank" rel="noopener noreferrer">Upstream <span class="link-arrow" aria-hidden="true">↗</span></a>
                         </div>
                     </div>
@@ -147,12 +141,12 @@
                         <span class="project-category">Research Tool</span>
                     </div>
                     <p class="project-desc">
-                        A reusable research workflow for developing and evaluating research ideas with explicit evidence, falsifiable hypotheses, minimum viable experiments, and continue / stop / pivot decisions. The workflow separates facts, inference, hypotheses, and speculation.
+                        A reusable workflow I designed to help researchers develop and critically evaluate ideas. It guides users through checking evidence, formulating testable hypotheses, and planning small experiments to decide whether to continue, revise, or abandon an idea.
                     </p>
                     <div class="project-footer">
                         <span class="project-stack">LLM Tooling · Reproducible Research</span>
                         <div class="project-links">
-                            <a href="https://github.com/CharmCheen/research-idea-advisor" target="_blank" rel="noopener noreferrer">GitHub <span class="link-arrow" aria-hidden="true">↗</span></a>
+                            <a href="https://github.com/CharmCheen/research-idea-advisor#readme" target="_blank" rel="noopener noreferrer">README <span class="link-arrow" aria-hidden="true">↗</span></a>
                         </div>
                     </div>
                 </article>
@@ -172,7 +166,7 @@
                         <span class="edu-location">Shanghai, China</span>
                     </div>
                     <div class="edu-logo">
-                        <img class="fudan-logo" src="picture/logos/fudan-lockup.png" alt="Fudan University logo with Chinese and English wordmarks" width="150" height="60" decoding="async">
+                        <img class="fudan-logo" src="picture/logos/fudan-lockup.svg" alt="Fudan University logo with Chinese and English wordmarks" width="150" height="48" decoding="async">
                     </div>
                 </div>
                 <div class="education-item">
@@ -191,7 +185,7 @@
                 <div class="experience-item">
                     <div class="edu-main">
                         <h3 class="edu-institution">Hikvision</h3>
-                        <p class="edu-degree">Interned on distributed cloud storage services.</p>
+                        <p class="edu-degree">Worked on distributed cloud storage services during an internship.</p>
                     </div>
                     <div class="edu-logo experience-logo">
                         <img src="picture/logos/hikvision.svg" alt="Hikvision logo" width="150" height="32" loading="lazy" decoding="async">

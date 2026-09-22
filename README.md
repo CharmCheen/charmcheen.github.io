@@ -23,7 +23,8 @@ python3 -m http.server 8765
 
 - 个人身份、研究方向和教育经历：编辑 `index.html`。
 - 精选项目：编辑 `index.html` 中的 `#projects` 区域，并为每个项目保留真实的状态和链接。
-- 个人头像：主页使用相对路径 `picture/mainphoto.jpg`；如需替换图片，请同步更新 HTML 的 `alt` 文本。
+- 个人头像：原图保存在 `picture/mainphoto.jpg`，主页加载 336×336 的 `picture/mainphoto-336.webp`。替换头像后，用 `cwebp -q 82 -resize 336 336 picture/mainphoto.jpg -o picture/mainphoto-336.webp` 重新生成，并按需更新 HTML 的 `alt` 文本。
+- 复旦标志：`picture/logos/fudan-lockup.svg` 来自[复旦大学官方标识下载](https://www.fudan.edu.cn/fdbsxz/list.htm)中的“校徽及中英文校名全称横向组合规范”EPS，转换为矢量 SVG，保留原始字形、比例和色彩。
 - 摄影顺序和分批加载：编辑 `photography.js` 中的 `curatedImageOrder`。
 - CV：准备好真实 PDF 后，再在主页导航和 Hero 链接中加入文件路径；未准备好时不要保留空链接。
 
