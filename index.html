@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Changhao Qin | Fudan University</title>
-    <meta name="description" content="Changhao Qin is an M.S. student in Computer Science at Fudan University, interested in database systems, AI/data infrastructure, and data processing systems.">
-    <meta name="theme-color" content="#fafafa">
+    <meta name="description" content="Changhao Qin is an M.S. student at Fudan University and DASLab interested in database systems and data infrastructure for AI workloads.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#17191e" media="(prefers-color-scheme: dark)">
     <meta property="og:title" content="Changhao Qin | Fudan University">
-    <meta property="og:description" content="Changhao Qin is an M.S. student in Computer Science at Fudan University, interested in database systems, AI/data infrastructure, and data processing systems.">
+    <meta property="og:description" content="Changhao Qin is an M.S. student at Fudan University and DASLab interested in database systems and data infrastructure for AI workloads.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://charmcheen.github.io/">
-    <!-- og:image file exists; update if customized academic banner is added -->
     <meta property="og:image" content="https://charmcheen.github.io/picture/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Changhao Qin | Fudan University">
-    <meta name="twitter:description" content="Changhao Qin is an M.S. student in Computer Science at Fudan University, interested in database systems, AI/data infrastructure, and data processing systems.">
+    <meta name="twitter:description" content="Changhao Qin is an M.S. student at Fudan University and DASLab interested in database systems and data infrastructure for AI workloads.">
     <meta name="twitter:image" content="https://charmcheen.github.io/picture/og-image.jpg">
     <link rel="canonical" href="https://charmcheen.github.io/">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preload" as="image" href="picture/mainphoto-336.webp" type="image/webp">
-    <link rel="stylesheet" href="style.css?v=20260922-11">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..600&amp;family=Inter:wght@400..600&amp;display=swap">
+    <link rel="stylesheet" href="style.css?v=20261126-1">
 </head>
-<body class="home-page">
+<body class="home-page" id="top">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header" aria-label="Site header">
@@ -32,14 +36,18 @@
             <a href="#about">About</a>
             <a href="#research">Research</a>
             <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
             <a href="#education">Education</a>
             <a href="photography.html">Photography</a>
         </nav>
     </header>
 
     <main id="main-content">
-        <section class="hero" id="top" aria-labelledby="hero-name">
+        <section class="hero" id="about" aria-labelledby="hero-name">
             <div class="hero-content">
+                <figure class="hero-portrait">
+                    <img src="picture/mainphoto-336.webp" alt="Portrait of Changhao Qin" width="152" height="152">
+                </figure>
                 <div class="hero-text">
                     <h1 id="hero-name" class="hero-name">Changhao Qin</h1>
                     <p class="hero-affiliation">
@@ -47,43 +55,27 @@
                         <a href="https://www.fudan.edu.cn/en/" target="_blank" rel="noopener noreferrer">Fudan University</a> · <a href="https://daslab.fudan.edu.cn/" target="_blank" rel="noopener noreferrer">DASLab</a>
                     </p>
                     <p class="hero-statement">
-                        I am interested in database systems and data infrastructure for AI workloads.
+                        I am interested in data infrastructure for machine learning.
                     </p>
                     <div class="hero-links" aria-label="Profile and contact links">
                         <a href="mailto:chqin26@m.fudan.edu.cn">Email <span class="link-arrow" aria-hidden="true">↗</span></a>
                         <a href="https://github.com/CharmCheen" target="_blank" rel="noopener noreferrer">GitHub <span class="link-arrow" aria-hidden="true">↗</span></a>
                     </div>
                 </div>
-                <figure class="hero-portrait">
-                    <img src="picture/mainphoto-336.webp" alt="Portrait of Changhao Qin" width="112" height="112">
-                </figure>
-            </div>
-        </section>
-
-        <section class="page-section" id="about" aria-labelledby="about-title">
-            <h2 id="about-title" class="section-title">About</h2>
-            <div class="section-body">
-                <p>
-                    I am a first-year master’s student in Computer Science at <a href="https://www.fudan.edu.cn/en/" target="_blank" rel="noopener noreferrer">Fudan University</a> and a member of <a href="https://daslab.fudan.edu.cn/" target="_blank" rel="noopener noreferrer">DASLab</a>. I received my bachelor’s degree in Software Engineering from <a href="https://www.whut.edu.cn/" target="_blank" rel="noopener noreferrer">Wuhan University of Technology</a>.
-                </p>
             </div>
         </section>
 
         <section class="page-section" id="research" aria-labelledby="research-title">
-            <h2 id="research-title" class="section-title">Research</h2>
+            <h2 id="research-title" class="section-title">Research Interests</h2>
             <div class="section-body">
                 <p>
-                    My current interests center on the execution layer of data-processing systems: physical operators, data organization, and scheduling. I am exploring how these components can adapt to the demands of heterogeneous AI workloads.
+                    I am interested in how the quality of training data affects what models learn. I study how systems can select, organize, and process large datasets to make high-quality data available for training.
                 </p>
-                <div class="research-flow" aria-label="Research focus progression">
-                    <span class="flow-node">AI / Data Infrastructure</span>
-                    <span class="flow-arrow" aria-hidden="true">→</span>
-                    <span class="flow-node">Data Processing</span>
-                    <span class="flow-arrow" aria-hidden="true">→</span>
-                    <span class="flow-node">Physical Operators</span>
-                    <span class="flow-arrow" aria-hidden="true">→</span>
-                    <span class="flow-node">Execution &amp; Optimization</span>
-                </div>
+                <ul class="research-interests" role="list">
+                    <li>Data Quality</li>
+                    <li>Data Processing</li>
+                    <li>Data Infrastructure</li>
+                </ul>
             </div>
         </section>
 
@@ -99,14 +91,9 @@
                         <span class="project-category">Personal Knowledge System</span>
                     </div>
                     <p class="project-desc">
-                        I am developing a personal knowledge system that connects retrieved information to its sources. My work focuses on source tracking, incremental ingestion, and retrieval evaluation in the RAG backend.
+                        I built a retrieval-augmented knowledge system that tracks source documents, updates a persistent Chroma index as local files change, and returns citations tied to retrieved passages.
                     </p>
-                    <div class="project-footer">
-                        <span class="project-stack">Python · RAG · System Design</span>
-                        <div class="project-links">
-                            <a href="https://github.com/CharmCheen/minddock#readme" target="_blank" rel="noopener noreferrer">README <span class="link-arrow" aria-hidden="true">↗</span></a>
-                        </div>
-                    </div>
+                    <p class="project-evidence"><a href="https://github.com/CharmCheen/minddock/blob/master/docs/SOURCE_MODEL.md" target="_blank" rel="noopener noreferrer">Source model <span class="link-arrow" aria-hidden="true">↗</span></a></p>
                 </article>
 
                 <!-- Project 2: NexDR-Enhanced -->
@@ -118,22 +105,16 @@
                         <span class="project-category">Deep Research Agent Extension</span>
                     </div>
                     <p class="project-desc">
-                        An experimental extension of NexDR for academic research. My modifications explore editable Markdown reports, PDF ingestion with page references, and integration with Semantic Scholar and arXiv.
+                        I extended NexDR with a workflow for revising hand-edited Markdown reports, page-aware PDF ingestion, and literature search through Semantic Scholar and arXiv.
                     </p>
                     <p class="project-attribution">
-                        Based on <a href="https://github.com/nex-agi/NexDR" target="_blank" rel="noopener noreferrer">nex-agi/NexDR <span class="link-arrow" aria-hidden="true">↗</span></a>
+                        Based on <a href="https://www.sii.edu.cn/2025/1120/c27a605/page.htm" target="_blank" rel="noopener noreferrer">NexDR by Nex-AGI <span class="link-arrow" aria-hidden="true">↗</span></a>
                     </p>
-                    <div class="project-footer">
-                        <span class="project-stack">Python · Agent Systems · Research Tooling</span>
-                        <div class="project-links">
-                            <a href="https://github.com/CharmCheen/NexDR-Enhanced#readme" target="_blank" rel="noopener noreferrer">README <span class="link-arrow" aria-hidden="true">↗</span></a>
-                            <a href="https://github.com/nex-agi/NexDR" target="_blank" rel="noopener noreferrer">Upstream <span class="link-arrow" aria-hidden="true">↗</span></a>
-                        </div>
-                    </div>
+                    <p class="project-evidence"><a href="https://github.com/CharmCheen/NexDR-Enhanced/blob/main/quick_start.py" target="_blank" rel="noopener noreferrer">Report workflow code <span class="link-arrow" aria-hidden="true">↗</span></a></p>
                 </article>
 
                 <!-- Project 3: Research Idea Advisor -->
-                <article class="project-item project-item-tool">
+                <article class="project-item">
                     <div class="project-header">
                         <h3 class="project-title">
                             <a href="https://github.com/CharmCheen/research-idea-advisor" target="_blank" rel="noopener noreferrer">Research Idea Advisor <span class="link-arrow" aria-hidden="true">↗</span></a>
@@ -141,29 +122,36 @@
                         <span class="project-category">Research Tool</span>
                     </div>
                     <p class="project-desc">
-                        A reusable workflow I designed to help researchers develop and critically evaluate ideas. It guides users through checking evidence, formulating testable hypotheses, and planning small experiments to decide whether to continue, revise, or abandon an idea.
+                        I designed a reusable skill for turning a research question into a testable hypothesis, checking the literature, and designing a small experiment with criteria for continuing or stopping.
                     </p>
-                    <div class="project-footer">
-                        <span class="project-stack">LLM Tooling · Reproducible Research</span>
-                        <div class="project-links">
-                            <a href="https://github.com/CharmCheen/research-idea-advisor#readme" target="_blank" rel="noopener noreferrer">README <span class="link-arrow" aria-hidden="true">↗</span></a>
-                        </div>
-                    </div>
+                    <p class="project-evidence"><a href="https://github.com/CharmCheen/research-idea-advisor/blob/main/SKILL.md" target="_blank" rel="noopener noreferrer">Skill specification <span class="link-arrow" aria-hidden="true">↗</span></a></p>
                 </article>
             </div>
         </section>
 
+        <section class="page-section" id="experience" aria-labelledby="experience-title">
+            <h2 id="experience-title" class="section-title">Experience</h2>
+            <div class="experience-item">
+                <div class="edu-main">
+                    <h3 class="edu-institution">Hikvision</h3>
+                    <p class="edu-degree">Intern · Distributed cloud storage services</p>
+                </div>
+                <div class="edu-logo experience-logo">
+                    <img src="picture/logos/hikvision.svg" alt="Hikvision logo" width="150" height="32" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </section>
+
         <section class="page-section" id="education" aria-labelledby="education-title">
-            <h2 id="education-title" class="section-title">Education &amp; Experience</h2>
+            <h2 id="education-title" class="section-title">Education</h2>
             <div class="education-list">
                 <div class="education-item">
                     <div class="edu-main">
                         <h3 class="edu-institution">Fudan University</h3>
                         <p class="edu-degree">M.S. in Computer Science · DASLab</p>
-                    </div>
-                    <div class="edu-meta">
-                        <span class="edu-date">2026 – Present</span>
-                        <span class="edu-location">Shanghai, China</span>
+                        <p class="edu-meta">
+                            <span class="edu-date">2026 – Present</span> <span aria-hidden="true">·</span> Shanghai, China
+                        </p>
                     </div>
                     <div class="edu-logo">
                         <img class="fudan-logo" src="picture/logos/fudan-lockup.svg" alt="Fudan University logo with Chinese and English wordmarks" width="150" height="48" decoding="async">
@@ -173,22 +161,12 @@
                     <div class="edu-main">
                         <h3 class="edu-institution"><a href="https://www.whut.edu.cn/" target="_blank" rel="noopener noreferrer">Wuhan University of Technology</a></h3>
                         <p class="edu-degree">B.S. in Software Engineering</p>
-                    </div>
-                    <div class="edu-meta">
-                        <span class="edu-date">2022 – 2026</span>
-                        <span class="edu-location">Wuhan, China</span>
+                        <p class="edu-meta">
+                            <span class="edu-date">2022 – 2026</span> <span aria-hidden="true">·</span> Wuhan, China
+                        </p>
                     </div>
                     <div class="edu-logo">
                         <img class="whut-logo" src="picture/logos/whut-lockup.svg" alt="Wuhan University of Technology logo" width="164" height="33" loading="lazy" decoding="async">
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="edu-main">
-                        <h3 class="edu-institution">Hikvision</h3>
-                        <p class="edu-degree">Worked on distributed cloud storage services during an internship.</p>
-                    </div>
-                    <div class="edu-logo experience-logo">
-                        <img src="picture/logos/hikvision.svg" alt="Hikvision logo" width="150" height="32" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -205,7 +183,7 @@
                 </p>
                 <figure class="beyond-photo">
                     <a href="photography.html" aria-label="Open photography journal">
-                        <img src="picture/home-preview-1.jpg" alt="Photograph by Changhao Qin" width="760" height="380" loading="lazy" decoding="async">
+                        <img src="picture/home-preview-1.jpg" alt="Photograph by Changhao Qin" width="640" height="426" loading="lazy" decoding="async">
                     </a>
                 </figure>
             </div>
@@ -214,7 +192,6 @@
 
     <footer class="site-footer">
         <p>© <span id="year">2026</span> Changhao Qin</p>
-        <p class="footer-note">Built with semantic HTML &amp; minimal CSS.</p>
     </footer>
 
     <script src="script.js"></script>

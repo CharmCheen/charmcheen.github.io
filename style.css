@@ -1,18 +1,4 @@
 :root {
-    --bg: #fafafa;
-    --surface: #ffffff;
-    --surface-muted: #f4f4f6;
-    --text: #171717;
-    --text-soft: #374151;
-    --muted: #6b7280;
-    --border: #e5e7eb;
-    --border-subtle: #f0f0f2;
-    --accent: #2563eb;
-    --accent-hover: #1d4ed8;
-    --accent-soft: #eff6ff;
-
-    --font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
     /* Shared by existing photography page */
     --color-accent: #5b8def;
     --color-accent-light: #9fc2ff;
@@ -20,6 +6,39 @@
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
     --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.4);
     --shadow-glow: 0 0 24px rgba(91, 141, 239, 0.14);
+}
+
+.home-page {
+    --bg: #fbfaf7;
+    --surface-muted: #f1efe9;
+    --text: #202124;
+    --text-soft: #41434a;
+    --muted: #5e6269;
+    --border: #d8d5cd;
+    --border-subtle: #e8e5dc;
+    --accent: #254e86;
+    --accent-hover: #163664;
+
+    --font-display: "Bodoni Moda", Didot, Georgia, serif;
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --logo-background: transparent;
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    .home-page {
+        --bg: #17191e;
+        --surface-muted: #23262d;
+        --text: #f1eee7;
+        --text-soft: #d0d1d5;
+        --muted: #a8adb7;
+        --border: #454951;
+        --border-subtle: #363a42;
+        --accent: #a4c3f3;
+        --accent-hover: #d1e2ff;
+        --logo-background: #efede7;
+        color-scheme: dark;
+    }
 }
 
 .home-page,
@@ -39,7 +58,7 @@ body.home-page {
     background-color: var(--bg);
     color: var(--text);
     font-family: var(--font-sans);
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -65,8 +84,8 @@ body.home-page {
     z-index: 100;
     padding: 0.5rem 0.85rem;
     background: var(--text);
-    color: #ffffff !important;
-    font-size: 0.85rem;
+    color: var(--bg) !important;
+    font-size: 0.9375rem;
     border-radius: 4px;
     transform: translateY(-150%);
     transition: transform 160ms ease;
@@ -76,7 +95,6 @@ body.home-page {
     transform: translateY(0);
 }
 
-/* Page container: vertical academic structure (max 860px) */
 .site-header,
 .home-page main,
 .site-footer {
@@ -84,9 +102,43 @@ body.home-page {
     margin-inline: auto;
 }
 
+.home-page .site-mark,
+.home-page .hero-name,
+.home-page .section-title {
+    font-family: var(--font-display);
+    letter-spacing: 0;
+}
+
+.research-interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.65rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+.research-interests li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.65rem;
+}
+
+.research-interests li + li::before {
+    content: "";
+    flex: 0 0 0.22rem;
+    height: 0.22rem;
+    border-radius: 50%;
+    background: currentColor;
+    transform: translateY(-0.24em);
+}
+
 /* Header & Navigation */
 .site-header {
-    padding-block: 2.5rem 1.5rem;
+    padding-block: 2rem 1rem;
+    border-bottom: 1px solid var(--border);
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -94,9 +146,8 @@ body.home-page {
 }
 
 .site-mark {
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-size: 1.3125rem;
+    font-weight: 500;
     color: var(--text);
 }
 
@@ -105,7 +156,7 @@ body.home-page {
     align-items: center;
     flex-wrap: wrap;
     gap: 1.35rem;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     color: var(--muted);
 }
 
@@ -119,20 +170,15 @@ body.home-page {
     color: var(--text);
 }
 
-.nav-cv {
-    opacity: 0.85;
-}
-
 /* Hero Section */
 .hero {
-    padding-block: 1.75rem 2.75rem;
+    padding-block: 2.75rem 2.5rem;
 }
 
 .hero-content {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .hero-text {
@@ -141,16 +187,16 @@ body.home-page {
 }
 
 .hero-name {
-    font-size: 2.25rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-size: clamp(2.25rem, 5.5vw, 3rem);
+    font-weight: 600;
+    font-variation-settings: "opsz" 16;
     line-height: 1.15;
-    margin: 0 0 0.45rem;
+    margin: 0 0 0.65rem;
     color: var(--text);
 }
 
 .hero-affiliation {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-soft);
     line-height: 1.55;
     margin: 0 0 0.85rem;
@@ -168,19 +214,9 @@ body.home-page {
     color: var(--accent);
 }
 
-.hero-interests {
-    font-size: 0.92rem;
-    color: var(--accent);
-    font-weight: 600;
-    margin: 0 0 1rem;
-    letter-spacing: 0.01em;
-}
-
 .hero-statement {
-    font-size: 1rem;
     color: var(--text-soft);
-    line-height: 1.7;
-    margin: 0 0 1.5rem;
+    margin: 0 0 1rem;
 }
 
 .hero-links {
@@ -219,36 +255,35 @@ a:hover .link-arrow {
 }
 
 .hero-portrait img {
-    width: 112px;
-    height: 112px;
+    width: 152px;
+    height: 152px;
     display: block;
     object-fit: cover;
     object-position: center top;
-    border-radius: 10px;
+    border-radius: 4px;
     border: 1px solid var(--border);
 }
 
 /* Sections */
 .page-section {
-    padding-block: 2.75rem 0;
+    padding-block: 2rem;
     border-top: 1px solid var(--border);
     scroll-margin-top: 2rem;
 }
 
-.section-title {
-    font-size: 1.3rem;
-    font-weight: 650;
-    letter-spacing: -0.02em;
-    margin: 0 0 1.25rem;
+.home-page .section-title {
+    font-size: 1.6875rem;
+    font-weight: 500;
+    font-variation-settings: "opsz" 14;
+    line-height: 1.25;
+    margin: 0 0 1rem;
     color: var(--text);
 }
 
 .section-body p {
     margin: 0 0 1.15rem;
     color: var(--text-soft);
-    font-size: 1rem;
-    line-height: 1.72;
-    max-width: 760px;
+    max-width: 76ch;
 }
 
 .section-body p:last-child {
@@ -267,51 +302,15 @@ a:hover .link-arrow {
     text-decoration-color: var(--accent);
 }
 
-/* Currently / Research flow */
-.research-flow {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.65rem 0.85rem;
-    margin: 1.35rem 0 1.15rem;
-    padding: 0.85rem 1.15rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    font-size: 0.88rem;
-}
-
-.flow-node {
-    font-weight: 550;
-    color: var(--text);
-}
-
-.flow-arrow {
-    color: var(--muted);
-    font-size: 0.95rem;
-    user-select: none;
-}
-
-.research-topics {
-    margin: 0.75rem 0 0 !important;
-    font-size: 0.88rem !important;
-    color: var(--muted) !important;
-}
-
-.topics-label {
-    color: var(--text-soft);
-    font-weight: 550;
-}
-
 /* Projects List */
 .projects-list {
     display: flex;
     flex-direction: column;
-    gap: 1.85rem;
+    gap: 1.35rem;
 }
 
 .project-item {
-    padding-bottom: 1.85rem;
+    padding-bottom: 1.35rem;
     border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -329,9 +328,8 @@ a:hover .link-arrow {
 }
 
 .project-title {
-    font-size: 1.15rem;
-    font-weight: 650;
-    letter-spacing: -0.015em;
+    font-size: 1.125rem;
+    font-weight: 600;
     margin: 0;
     color: var(--text);
 }
@@ -341,24 +339,22 @@ a:hover .link-arrow {
 }
 
 .project-category {
-    font-size: 0.82rem;
+    font-size: 0.875rem;
     color: var(--muted);
     font-weight: 500;
     white-space: nowrap;
 }
 
 .project-desc {
-    font-size: 0.95rem;
     color: var(--text-soft);
-    line-height: 1.68;
-    margin: 0 0 0.65rem;
-    max-width: 760px;
+    margin: 0;
+    max-width: 76ch;
 }
 
 .project-attribution {
-    font-size: 0.84rem;
+    font-size: 0.875rem;
     color: var(--muted);
-    margin: 0 0 0.65rem;
+    margin: 0.45rem 0 0;
 }
 
 .project-attribution a {
@@ -371,71 +367,33 @@ a:hover .link-arrow {
     color: var(--accent);
 }
 
-.project-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.65rem 1.25rem;
-    font-size: 0.84rem;
+.project-evidence {
+    margin: 0.45rem 0 0;
+    font-size: 0.875rem;
 }
 
-.project-stack {
-    color: var(--muted);
-}
-
-.project-links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.project-links a {
+.project-evidence a {
     color: var(--accent);
-    font-weight: 550;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.2rem;
+    font-weight: 500;
 }
 
-.project-links a:hover {
+.project-evidence a:hover {
     color: var(--accent-hover);
 }
 
-/* Research Tool visual weight calibration */
-.project-item-tool {
-    padding-top: 0.15rem;
-}
-
-.project-item-tool .project-title {
-    font-size: 1.08rem;
-}
-
-.project-item-tool .project-desc {
-    font-size: 0.92rem;
-}
-
-/* Education */
+/* Experience and education */
 .education-list {
     display: flex;
     flex-direction: column;
     gap: 1.35rem;
 }
 
-.education-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1.5rem;
-}
-
+.education-item,
 .experience-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
-    padding-top: 1.35rem;
-    border-top: 1px solid var(--border-subtle);
 }
 
 .edu-main {
@@ -443,52 +401,43 @@ a:hover .link-arrow {
 }
 
 .edu-institution {
-    font-size: 1.05rem;
-    font-weight: 650;
+    font-size: 1rem;
+    font-weight: 600;
     margin: 0;
     color: var(--text);
 }
 
 .edu-degree {
-    font-size: 0.92rem;
+    font-size: 1rem;
     color: var(--text-soft);
     margin: 0.2rem 0 0;
 }
 
 .edu-meta {
-    text-align: right;
-    white-space: nowrap;
-    font-size: 0.88rem;
+    margin: 0.3rem 0 0;
+    color: var(--muted);
+    font-size: 0.875rem;
 }
 
 .edu-date {
-    display: block;
-    color: var(--text-soft);
     font-variant-numeric: tabular-nums;
 }
 
-.edu-location {
-    display: block;
-    color: var(--muted);
-    font-size: 0.82rem;
-    margin-top: 0.15rem;
-}
-
 .edu-logo {
-    flex: 0 0 176px;
+    flex: 0 0 172px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     min-height: 56px;
     padding: 0;
-    border: 0;
-    background: transparent;
+    border-radius: 4px;
+    background: var(--logo-background);
 }
 
 .edu-logo img {
     display: block;
-    max-width: 164px;
-    max-height: 44px;
+    max-width: 150px;
+    max-height: 40px;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -502,12 +451,8 @@ a:hover .link-arrow {
 }
 
 .edu-logo .whut-logo {
-    max-width: 164px;
+    max-width: 150px;
     max-height: 33px;
-}
-
-.experience-logo {
-    flex-basis: 176px;
 }
 
 .experience-logo img {
@@ -526,7 +471,7 @@ a:hover .link-arrow {
     gap: 0.35rem;
     color: var(--accent) !important;
     font-size: 0.9rem;
-    font-weight: 550;
+    font-weight: 500;
 }
 
 .text-link:hover {
@@ -535,7 +480,7 @@ a:hover .link-arrow {
 
 .beyond-photo {
     margin: 1.5rem 0 0;
-    max-width: 760px;
+    max-width: 70ch;
     overflow: hidden;
     border-radius: 8px;
     border: 1px solid var(--border);
@@ -544,8 +489,9 @@ a:hover .link-arrow {
 
 .beyond-photo img {
     width: 100%;
-    max-height: 320px;
+    height: clamp(220px, 30vw, 280px);
     object-fit: cover;
+    object-position: center 48%;
     display: block;
     filter: saturate(0.88);
     transition: filter 250ms ease;
@@ -557,23 +503,15 @@ a:hover .link-arrow {
 
 /* Footer */
 .site-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
     padding-block: 2rem 3.5rem;
-    margin-top: 3.5rem;
+    margin-top: 0.5rem;
     border-top: 1px solid var(--border);
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: 0.9rem;
 }
 
 .site-footer p {
     margin: 0;
-}
-
-.footer-note {
-    color: var(--muted);
 }
 
 /* Responsive Media Queries */
@@ -581,7 +519,7 @@ a:hover .link-arrow {
     .site-header,
     .home-page main,
     .site-footer {
-        width: min(100% - 2rem, 860px);
+        width: calc(100% - 2rem);
     }
 
     .site-header {
@@ -592,8 +530,11 @@ a:hover .link-arrow {
     }
 
     .site-nav {
-        gap: 0.55rem 0.75rem;
-        font-size: 0.83rem;
+        gap: 0 1.1rem;
+    }
+
+    .site-nav a {
+        padding-block: 0.55rem;
     }
 
     .hero {
@@ -601,7 +542,6 @@ a:hover .link-arrow {
     }
 
     .hero-content {
-        flex-direction: column-reverse;
         gap: 1.25rem;
     }
 
@@ -610,58 +550,73 @@ a:hover .link-arrow {
         height: 96px;
     }
 
-    .research-flow {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.35rem;
-        padding: 0.85rem 1rem;
-    }
-
-    .flow-arrow {
-        transform: rotate(90deg);
-        margin: 0.1rem 0 0.1rem 0.35rem;
-    }
-
     .project-header {
         flex-direction: column;
         gap: 0.15rem;
     }
 
-    .education-item {
-        flex-direction: column;
-        gap: 0.25rem;
-    }
-
+    .education-item,
     .experience-item {
         align-items: flex-start;
         flex-direction: column;
         gap: 0.65rem;
     }
 
-    .edu-meta {
-        text-align: left;
+    .edu-logo {
+        flex: 0 0 auto;
+        width: 130px;
+        max-width: 100%;
+        min-height: 0;
+        padding: 0.35rem 0.45rem;
     }
 
-    .edu-logo,
-    .experience-logo {
-        flex: 0 0 auto;
-        width: 176px;
-        max-width: 100%;
-        justify-content: flex-start;
+    .home-page .edu-logo img {
+        width: 100%;
+        max-height: 32px;
     }
 }
 
 @media (max-width: 480px) {
-    .site-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.35rem;
+    .site-nav {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-content {
+        gap: 0.75rem;
+    }
+
+    .hero-name {
+        font-size: 2rem;
+    }
+
+    .hero-portrait img {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-portrait img {
+        width: 64px;
+        height: 64px;
     }
 }
 
 @media print {
-    body.home-page {
-        background: white;
+    .home-page {
+        --bg: #ffffff;
+        --text: #202124;
+        --text-soft: #41434a;
+        --muted: #5e6269;
+        --border: #d8d5cd;
+        --border-subtle: #e8e5dc;
+        --surface-muted: #f1efe9;
+        --accent: #254e86;
+        --logo-background: transparent;
+        color-scheme: light;
     }
 
     .site-header,
